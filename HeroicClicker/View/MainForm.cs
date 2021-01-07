@@ -16,18 +16,14 @@ namespace HeroicClicker
         private Point moveStart;
 
         private const int cGrip = 16;
-        private const int cCaption = 32;   
+        private const int cCaption = 32;
         public MainForm()
         {
             InitializeComponent();
-            this.LeftMenu.BackColor = ColorTranslator.FromHtml("#FAFAFA");
-            this.TopMenu.BackColor = ColorTranslator.FromHtml("#DB4C3F");
-
-            //this.MenuButton.FlatAppearance.MouseDownBackColor = ColorTranslator.FromHtml("#DB4C3F");
-            //this.MenuButton.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#DB4C3F");
 
 
-            SetSettings(this.MenuButton, this.QuestionButton, this.ResizeButton, this.CancelButton);
+
+
             this.LeftMenu.Width = 200;
 
             this.FormBorderStyle = FormBorderStyle.None;
@@ -35,19 +31,22 @@ namespace HeroicClicker
             this.SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
-
         /// <summary>
-        /// Установка параметров.
+        /// Выделение выбранной кнопки.
         /// </summary>
-        /// <param name="buttons"></param>
-        private void SetSettings(params Button[] buttons)
+        /// <param name="sender"></param>
+        private void ClickButton(object sender)
         {
+            Button selectedButton = (sender as Button);
+            Button[] buttons = new Button[4] { this.PersonButton, this.StoryButton, this.FightButton, this.AchievementButton };
             foreach (Button button in buttons)
             {
-                button.FlatAppearance.MouseDownBackColor = ColorTranslator.FromHtml("#DB4C3F");
-                button.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml("#DB4C3F");
+                button.BackColor = Color.FromArgb(250, 250, 250);
             }
+            selectedButton.BackColor = Color.White;
+            IndicatorSelected.Top = selectedButton.Top;
         }
+
 
         /// <summary>
         /// Событие сворачивания, разворачивания меню.
@@ -138,7 +137,7 @@ namespace HeroicClicker
             }
             if (this.WindowState != FormWindowState.Maximized)
             {
-                this.ResizeButton.ImageIndex = 2;
+                this.ResizeButton.ImageKey = "Expand.png";
 
             }
             base.WndProc(ref m);
@@ -161,15 +160,15 @@ namespace HeroicClicker
         /// <param name="e"></param>
         private void ResizeButton_Click(object sender, EventArgs e)
         {
-            if (this.WindowState !=FormWindowState.Maximized)
+            if (this.WindowState != FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Maximized;
-                this.ResizeButton.ImageIndex = 1;
+                this.ResizeButton.ImageKey = "Compress.png";
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
-                this.ResizeButton.ImageIndex = 2;
+                this.ResizeButton.ImageKey = "Expand.png";
 
             }
         }
@@ -183,6 +182,29 @@ namespace HeroicClicker
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void PersonButton_Click(object sender, EventArgs e)
+        {
+            ClickButton(sender);
+
+        }
+
+        private void StoryButton_Click(object sender, EventArgs e)
+        {
+            ClickButton(sender);
+        }
+
+        private void FightButton_Click(object sender, EventArgs e)
+        {
+            ClickButton(sender);
+        }
+
+        private void AchievementButton_Click(object sender, EventArgs e)
+        {
+            ClickButton(sender);
+        }
+
+
     }
 }
 

@@ -32,173 +32,160 @@ namespace HeroicClicker
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LeftMenu = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.IndicatorSelected = new System.Windows.Forms.Panel();
+            this.AchievementButton = new System.Windows.Forms.Button();
+            this.MenuImages = new System.Windows.Forms.ImageList(this.components);
+            this.FightButton = new System.Windows.Forms.Button();
+            this.StoryButton = new System.Windows.Forms.Button();
+            this.PersonButton = new System.Windows.Forms.Button();
             this.TopMenu = new System.Windows.Forms.Panel();
-            this.MenuButton = new System.Windows.Forms.Button();
-            this.QuestionButton = new System.Windows.Forms.Button();
-            this.ResizeButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
             this.MinimizeButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.ResizeButton = new System.Windows.Forms.Button();
+            this.QuestionButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.LeftMenu.SuspendLayout();
             this.TopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftMenu
             // 
-            this.LeftMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LeftMenu.Controls.Add(this.button6);
-            this.LeftMenu.Controls.Add(this.button5);
-            this.LeftMenu.Controls.Add(this.button4);
-            this.LeftMenu.Controls.Add(this.button3);
-            this.LeftMenu.Controls.Add(this.button2);
-            this.LeftMenu.Controls.Add(this.button1);
+            this.LeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.LeftMenu.Controls.Add(this.IndicatorSelected);
+            this.LeftMenu.Controls.Add(this.AchievementButton);
+            this.LeftMenu.Controls.Add(this.FightButton);
+            this.LeftMenu.Controls.Add(this.StoryButton);
+            this.LeftMenu.Controls.Add(this.PersonButton);
             this.LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LeftMenu.ForeColor = System.Drawing.Color.Coral;
             this.LeftMenu.Location = new System.Drawing.Point(0, 100);
             this.LeftMenu.Name = "LeftMenu";
             this.LeftMenu.Size = new System.Drawing.Size(200, 520);
             this.LeftMenu.TabIndex = 0;
             // 
-            // button6
+            // IndicatorSelected
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.ImageIndex = 1;
-            this.button6.ImageList = this.imageList1;
-            this.button6.Location = new System.Drawing.Point(0, 250);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 50);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Персонаж";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.IndicatorSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.IndicatorSelected.Location = new System.Drawing.Point(0, 0);
+            this.IndicatorSelected.Name = "IndicatorSelected";
+            this.IndicatorSelected.Size = new System.Drawing.Size(5, 80);
+            this.IndicatorSelected.TabIndex = 2;
             // 
-            // imageList1
+            // AchievementButton
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "checked_identification_documents_50px.png");
-            this.imageList1.Images.SetKeyName(1, "compress_50px.png");
-            this.imageList1.Images.SetKeyName(2, "expand_50px.png");
-            this.imageList1.Images.SetKeyName(3, "menu_50px.png");
-            this.imageList1.Images.SetKeyName(4, "search_50px.png");
-            this.imageList1.Images.SetKeyName(5, "delete_50px.png");
-            this.imageList1.Images.SetKeyName(6, "subtract_50px.png");
+            this.AchievementButton.AutoSize = true;
+            this.AchievementButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AchievementButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AchievementButton.FlatAppearance.BorderSize = 0;
+            this.AchievementButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.AchievementButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.AchievementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AchievementButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AchievementButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AchievementButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AchievementButton.ImageKey = "Achievement.png";
+            this.AchievementButton.ImageList = this.MenuImages;
+            this.AchievementButton.Location = new System.Drawing.Point(0, 240);
+            this.AchievementButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AchievementButton.Name = "AchievementButton";
+            this.AchievementButton.Size = new System.Drawing.Size(200, 80);
+            this.AchievementButton.TabIndex = 3;
+            this.AchievementButton.Text = "Достижения";
+            this.AchievementButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AchievementButton.UseVisualStyleBackColor = true;
+            this.AchievementButton.Click += new System.EventHandler(this.AchievementButton_Click);
             // 
-            // button5
+            // MenuImages
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.ImageIndex = 1;
-            this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(0, 200);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 50);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Персонаж";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.MenuImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("MenuImages.ImageStream")));
+            this.MenuImages.TransparentColor = System.Drawing.Color.Transparent;
+            this.MenuImages.Images.SetKeyName(0, "Compress.png");
+            this.MenuImages.Images.SetKeyName(1, "Expand.png");
+            this.MenuImages.Images.SetKeyName(2, "Menu.png");
+            this.MenuImages.Images.SetKeyName(3, "Search.png");
+            this.MenuImages.Images.SetKeyName(4, "Close.png");
+            this.MenuImages.Images.SetKeyName(5, "Minus.png");
+            this.MenuImages.Images.SetKeyName(6, "Person.png");
+            this.MenuImages.Images.SetKeyName(7, "Book.png");
+            this.MenuImages.Images.SetKeyName(8, "Fight.png");
+            this.MenuImages.Images.SetKeyName(9, "Achievement.png");
             // 
-            // button4
+            // FightButton
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.ImageIndex = 1;
-            this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(0, 150);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Персонаж";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.FightButton.AutoSize = true;
+            this.FightButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FightButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FightButton.FlatAppearance.BorderSize = 0;
+            this.FightButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.FightButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.FightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FightButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FightButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FightButton.ImageKey = "Fight.png";
+            this.FightButton.ImageList = this.MenuImages;
+            this.FightButton.Location = new System.Drawing.Point(0, 160);
+            this.FightButton.Margin = new System.Windows.Forms.Padding(0);
+            this.FightButton.Name = "FightButton";
+            this.FightButton.Size = new System.Drawing.Size(200, 80);
+            this.FightButton.TabIndex = 2;
+            this.FightButton.Text = "Битвы";
+            this.FightButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.FightButton.UseVisualStyleBackColor = true;
+            this.FightButton.Click += new System.EventHandler(this.FightButton_Click);
             // 
-            // button3
+            // StoryButton
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImageIndex = 1;
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(0, 100);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Персонаж";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.StoryButton.AutoSize = true;
+            this.StoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StoryButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StoryButton.FlatAppearance.BorderSize = 0;
+            this.StoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.StoryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.StoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StoryButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.StoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StoryButton.ImageKey = "Book.png";
+            this.StoryButton.ImageList = this.MenuImages;
+            this.StoryButton.Location = new System.Drawing.Point(0, 80);
+            this.StoryButton.Margin = new System.Windows.Forms.Padding(0);
+            this.StoryButton.Name = "StoryButton";
+            this.StoryButton.Size = new System.Drawing.Size(200, 80);
+            this.StoryButton.TabIndex = 1;
+            this.StoryButton.Text = "История";
+            this.StoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.StoryButton.UseVisualStyleBackColor = true;
+            this.StoryButton.Click += new System.EventHandler(this.StoryButton_Click);
             // 
-            // button2
+            // PersonButton
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImageIndex = 1;
-            this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(0, 50);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Персонаж";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImageIndex = 0;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Персонаж";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.PersonButton.AutoSize = true;
+            this.PersonButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PersonButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PersonButton.FlatAppearance.BorderSize = 0;
+            this.PersonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.PersonButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.PersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PersonButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PersonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PersonButton.ImageKey = "Person.png";
+            this.PersonButton.ImageList = this.MenuImages;
+            this.PersonButton.Location = new System.Drawing.Point(0, 0);
+            this.PersonButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PersonButton.Name = "PersonButton";
+            this.PersonButton.Size = new System.Drawing.Size(200, 80);
+            this.PersonButton.TabIndex = 0;
+            this.PersonButton.Text = "Персонаж";
+            this.PersonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PersonButton.UseVisualStyleBackColor = true;
+            this.PersonButton.Click += new System.EventHandler(this.PersonButton_Click);
             // 
             // TopMenu
             // 
-            this.TopMenu.BackColor = System.Drawing.Color.SandyBrown;
+            this.TopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.TopMenu.Controls.Add(this.MinimizeButton);
             this.TopMenu.Controls.Add(this.CancelButton);
             this.TopMenu.Controls.Add(this.ResizeButton);
@@ -212,52 +199,23 @@ namespace HeroicClicker
             this.TopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseDown);
             this.TopMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseMove);
             // 
-            // MenuButton
+            // MinimizeButton
             // 
-            this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuButton.FlatAppearance.BorderSize = 0;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuButton.ImageIndex = 3;
-            this.MenuButton.ImageList = this.imageList1;
-            this.MenuButton.Location = new System.Drawing.Point(15, 15);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(60, 60);
-            this.MenuButton.TabIndex = 0;
-            this.MenuButton.UseVisualStyleBackColor = true;
-            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
-            // QuestionButton
-            // 
-            this.QuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.QuestionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.QuestionButton.FlatAppearance.BorderSize = 0;
-            this.QuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuestionButton.ImageIndex = 4;
-            this.QuestionButton.ImageList = this.imageList1;
-            this.QuestionButton.Location = new System.Drawing.Point(732, 20);
-            this.QuestionButton.Name = "QuestionButton";
-            this.QuestionButton.Size = new System.Drawing.Size(60, 60);
-            this.QuestionButton.TabIndex = 3;
-            this.QuestionButton.UseVisualStyleBackColor = true;
-            // 
-            // ResizeButton
-            // 
-            this.ResizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ResizeButton.AutoSize = true;
-            this.ResizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ResizeButton.FlatAppearance.BorderSize = 0;
-            this.ResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResizeButton.ImageIndex = 2;
-            this.ResizeButton.ImageList = this.imageList1;
-            this.ResizeButton.Location = new System.Drawing.Point(940, 15);
-            this.ResizeButton.Name = "ResizeButton";
-            this.ResizeButton.Size = new System.Drawing.Size(60, 60);
-            this.ResizeButton.TabIndex = 2;
-            this.ResizeButton.UseVisualStyleBackColor = true;
-            this.ResizeButton.Click += new System.EventHandler(this.ResizeButton_Click);
+            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimizeButton.FlatAppearance.BorderSize = 0;
+            this.MinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeButton.ImageKey = "Minus.png";
+            this.MinimizeButton.ImageList = this.MenuImages;
+            this.MinimizeButton.Location = new System.Drawing.Point(791, 3);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(100, 100);
+            this.MinimizeButton.TabIndex = 4;
+            this.MinimizeButton.UseVisualStyleBackColor = true;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // CancelButton
             // 
@@ -266,31 +224,78 @@ namespace HeroicClicker
             this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.FlatAppearance.BorderSize = 0;
+            this.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.CancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.ImageIndex = 5;
-            this.CancelButton.ImageList = this.imageList1;
-            this.CancelButton.Location = new System.Drawing.Point(1030, 15);
+            this.CancelButton.ImageKey = "Close.png";
+            this.CancelButton.ImageList = this.MenuImages;
+            this.CancelButton.Location = new System.Drawing.Point(1003, 0);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(60, 60);
+            this.CancelButton.Size = new System.Drawing.Size(100, 100);
             this.CancelButton.TabIndex = 1;
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // MinimizeButton
+            // ResizeButton
             // 
-            this.MinimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MinimizeButton.FlatAppearance.BorderSize = 0;
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.ImageIndex = 6;
-            this.MinimizeButton.ImageList = this.imageList1;
-            this.MinimizeButton.Location = new System.Drawing.Point(837, 20);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(60, 60);
-            this.MinimizeButton.TabIndex = 4;
-            this.MinimizeButton.UseVisualStyleBackColor = true;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.ResizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResizeButton.AutoSize = true;
+            this.ResizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ResizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ResizeButton.FlatAppearance.BorderSize = 0;
+            this.ResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.ResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.ResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResizeButton.ImageKey = "Expand.png";
+            this.ResizeButton.ImageList = this.MenuImages;
+            this.ResizeButton.Location = new System.Drawing.Point(897, 3);
+            this.ResizeButton.Name = "ResizeButton";
+            this.ResizeButton.Size = new System.Drawing.Size(100, 100);
+            this.ResizeButton.TabIndex = 2;
+            this.ResizeButton.UseVisualStyleBackColor = true;
+            this.ResizeButton.Click += new System.EventHandler(this.ResizeButton_Click);
+            // 
+            // QuestionButton
+            // 
+            this.QuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.QuestionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.QuestionButton.FlatAppearance.BorderSize = 0;
+            this.QuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.QuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.QuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionButton.ImageKey = "Search.png";
+            this.QuestionButton.ImageList = this.MenuImages;
+            this.QuestionButton.Location = new System.Drawing.Point(671, 3);
+            this.QuestionButton.Name = "QuestionButton";
+            this.QuestionButton.Size = new System.Drawing.Size(100, 100);
+            this.QuestionButton.TabIndex = 3;
+            this.QuestionButton.UseVisualStyleBackColor = true;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatAppearance.BorderSize = 0;
+            this.MenuButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.MenuButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuButton.ImageKey = "Menu.png";
+            this.MenuButton.ImageList = this.MenuImages;
+            this.MenuButton.Location = new System.Drawing.Point(38, 15);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(60, 60);
+            this.MenuButton.TabIndex = 0;
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(200, 100);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(903, 520);
+            this.ContentPanel.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -298,6 +303,7 @@ namespace HeroicClicker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1103, 620);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.LeftMenu);
             this.Controls.Add(this.TopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -309,6 +315,7 @@ namespace HeroicClicker
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.LeftMenu.ResumeLayout(false);
+            this.LeftMenu.PerformLayout();
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -320,17 +327,17 @@ namespace HeroicClicker
         private System.Windows.Forms.Panel LeftMenu;
         private System.Windows.Forms.Panel TopMenu;
         private System.Windows.Forms.Button MenuButton;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ImageList MenuImages;
+        private System.Windows.Forms.Button PersonButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button ResizeButton;
         private System.Windows.Forms.Button QuestionButton;
         private System.Windows.Forms.Button MinimizeButton;
+        private System.Windows.Forms.Button AchievementButton;
+        private System.Windows.Forms.Button FightButton;
+        private System.Windows.Forms.Button StoryButton;
+        private System.Windows.Forms.Panel IndicatorSelected;
+        private System.Windows.Forms.Panel ContentPanel;
     }
 }
 
