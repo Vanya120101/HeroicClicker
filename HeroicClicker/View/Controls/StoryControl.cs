@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeroicClicker.View
+namespace HeroicClicker.View.Controls
 {
-    public partial class FightControl : UserControl
+    public partial class StoryControl : UserControl
     {
-        public FightControl()
+        public StoryControl()
         {
             InitializeComponent();
         }

@@ -1,5 +1,5 @@
 ﻿
-namespace HeroicClicker.View
+namespace HeroicClicker.View.Controls
 {
     partial class StoryControl
     {

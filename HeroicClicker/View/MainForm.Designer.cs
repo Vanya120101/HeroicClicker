@@ -292,6 +292,7 @@ namespace HeroicClicker
             // ContentPanel
             // 
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.ForeColor = System.Drawing.Color.Black;
             this.ContentPanel.Location = new System.Drawing.Point(200, 100);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(903, 505);

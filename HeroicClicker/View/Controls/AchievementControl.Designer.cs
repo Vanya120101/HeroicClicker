@@ -1,7 +1,7 @@
 ﻿
-namespace HeroicClicker.View
+namespace HeroicClicker.View.Controls
 {
-    partial class PersonControl
+    partial class AchievementControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,31 +29,33 @@ namespace HeroicClicker.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // panel1
+            // label1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(284, 182);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(495, 193);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Achievement";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PersonControl
+            // AchievementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel1);
-            this.Name = "PersonControl";
+            this.Controls.Add(this.label1);
+            this.Name = "AchievementControl";
             this.Size = new System.Drawing.Size(903, 520);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

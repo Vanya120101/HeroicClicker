@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeroicClicker.View
+namespace HeroicClicker.View.Controls
 {
-    public partial class AchievementControl : UserControl
+    public partial class PersonControl : UserControl
     {
-        public AchievementControl()
+        public PersonControl()
         {
             InitializeComponent();
         }

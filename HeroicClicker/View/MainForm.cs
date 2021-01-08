@@ -1,4 +1,5 @@
 ﻿using HeroicClicker.View;
+using HeroicClicker.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,26 +20,13 @@ namespace HeroicClicker
         private const int cGrip = 16;
         private const int cCaption = 32;
 
+      
+
         public MainForm()
         {
             InitializeComponent();
 
-            PersonControl personControl = new PersonControl();
-            personControl.Dock = DockStyle.Fill;
-            ContentPanel.Controls.Add(personControl);
-
-            StoryControl storyControl = new StoryControl();
-            storyControl.Dock = DockStyle.Fill;
-            ContentPanel.Controls.Add(storyControl);
-
-            FightControl fightControl = new FightControl();
-            fightControl.Dock = DockStyle.Fill;
-            ContentPanel.Controls.Add(fightControl);
-
-            AchievementControl achievementControl = new AchievementControl();
-            achievementControl.Dock = DockStyle.Fill;
-            ContentPanel.Controls.Add(achievementControl);
-
+            CreateControls();
 
 
 
@@ -49,6 +37,33 @@ namespace HeroicClicker
             this.SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
+        /// <summary>
+        /// Создание контролов.
+        /// </summary>
+        private void CreateControls()
+        {
+            PersonControl personControl = new PersonControl();
+            StoryControl storyControl = new StoryControl();
+            FightControl fightControl = new FightControl();
+            AchievementControl achievementControl = new AchievementControl();
+            CreatePersonControl createPersonControl = new CreatePersonControl();
+
+          
+            AdjustControls(personControl, storyControl, fightControl, achievementControl, createPersonControl);
+        }
+        /// <summary>
+        /// Настраивание контролов.
+        /// </summary>
+        /// <param name="controls"></param>
+        private void AdjustControls(params Control[] controls)
+        {
+            foreach (Control control in controls)
+            {
+                control.Dock = DockStyle.Fill;
+                ContentPanel.Controls.Add(control);
+            }
+        }
+
         /// <summary>
         /// Выделение выбранной кнопки.
         /// </summary>
@@ -130,6 +145,8 @@ namespace HeroicClicker
             ControlPaint.DrawSizeGrip(e.Graphics, this.BackColor, rc);
             rc = new Rectangle(0, 0, this.ClientSize.Width, cCaption);
             e.Graphics.FillRectangle(Brushes.DarkBlue, rc);
+
+
         }
 
         /// <summary>
@@ -158,6 +175,18 @@ namespace HeroicClicker
                 this.ResizeButton.ImageKey = "Expand.png";
 
             }
+
+            //Control[] controls = ContentPanel.Controls.Find("CreatePersonControl", false);
+            //foreach (var control in controls)
+            //{
+            //    Control[] controls2 = control.Controls.Find("CreatePersonLabel", false);
+            //    foreach (var control2 in controls2)
+            //    {
+            //        control2.Location = new Point(ContentPanel.Width / 2 - 100, control2.Location.Y);
+
+            //    }
+
+            //}
             base.WndProc(ref m);
         }
 
@@ -208,7 +237,7 @@ namespace HeroicClicker
         /// <param name="e"></param>
         private void PersonButton_Click(object sender, EventArgs e)
         {
-            Control[] controls = ContentPanel.Controls.Find("PersonControl", false);
+            Control[] controls = ContentPanel.Controls.Find("CreatePersonControl", false);
             foreach (Control control in controls)
             {
                 control.BringToFront();
