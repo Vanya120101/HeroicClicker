@@ -294,6 +294,7 @@ namespace HeroicClicker
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.ForeColor = System.Drawing.Color.Black;
             this.ContentPanel.Location = new System.Drawing.Point(200, 100);
+            this.ContentPanel.MinimumSize = new System.Drawing.Size(554, 405);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(903, 505);
             this.ContentPanel.TabIndex = 2;
@@ -312,7 +313,7 @@ namespace HeroicClicker
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

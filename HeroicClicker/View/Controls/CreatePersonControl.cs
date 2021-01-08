@@ -19,16 +19,16 @@ namespace HeroicClicker.View.Controls
         {
             InitializeComponent();
 
-            Binding bindinSizeToLocationLabel = new Binding("Location", this, "Size", false, DataSourceUpdateMode.OnPropertyChanged);
-            bindinSizeToLocationLabel.Format += SizeToLocationLabel_Format;
-            this.CreatePersonLabel.DataBindings.Add(bindinSizeToLocationLabel);
+            //Binding bindinSizeToLocationLabel = new Binding("Location", this, "Size", false, DataSourceUpdateMode.OnPropertyChanged);
+            //bindinSizeToLocationLabel.Format += SizeToLocationLabel_Format;
+            //this.CreatePersonLabel.DataBindings.Add(bindinSizeToLocationLabel);
 
 
-            Binding bindinSizeToLocationPanel = new Binding("Size", this, "Size", false, DataSourceUpdateMode.OnPropertyChanged);
-            bindinSizeToLocationPanel.Format += SizeToLocationPanel_Format;
-            this.LayounPanel.DataBindings.Add(bindinSizeToLocationPanel);
+            //Binding bindinSizeToLocationPanel = new Binding("Size", this, "Size", false, DataSourceUpdateMode.OnPropertyChanged);
+            //bindinSizeToLocationPanel.Format += SizeToLocationPanel_Format;
+            //this.LayounPanel.DataBindings.Add(bindinSizeToLocationPanel);
 
-
+            
 
 
 
@@ -36,19 +36,19 @@ namespace HeroicClicker.View.Controls
 
         }
 
-        private void SizeToLocationPanel_Format(object sender, ConvertEventArgs e)
-        {
-            Size size = (Size)e.Value;
+        //private void SizeToLocationPanel_Format(object sender, ConvertEventArgs e)
+        //{
+        //    Size size = (Size)e.Value;
 
-            e.Value = new Size(size.Width - 150, size.Height - 150);
-        }
+        //    e.Value = new Size(size.Width - 50, size.Height - 20);
+        //}
 
-        private void SizeToLocationLabel_Format(object sender, ConvertEventArgs e)
-        {
-            Size size = (Size)e.Value;
+        //private void SizeToLocationLabel_Format(object sender, ConvertEventArgs e)
+        //{
+        //    Size size = (Size)e.Value;
 
-            e.Value = new Point((size.Width - 284) / 2, 30);
-        }
+        //    e.Value = new Point((size.Width - 284) / 2, 30);
+        //}
 
     }
 }

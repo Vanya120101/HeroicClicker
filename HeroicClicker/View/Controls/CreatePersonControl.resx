@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="AvatarBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAwtJREFUaEPt
         2UvoTGEYx/FxJ7ESQiKSWxJiQcjCLZfIZUFshRJlIxu3naWVUkqURMTOws4aud92FhLJJaHw/c1/nn/H
@@ -137,29 +137,15 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>311, 17</value>
-  </metadata>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAwtJREFUaEPt
-        2UvoTGEYx/FxJ7ESQiKSWxJiQcjCLZfIZUFshRJlIxu3naWVUkqURMTOws4aud92FhLJJaHw/c1/nn/H
-        eZ93bs2Zc6bOrz51zjvPe2bmzHnfeedMpUyZMmXKlOlgJuM6PuBvQem13cB0uNGb+ASvcxF9xCQE0Sfh
-        dSiyawjyBV5xkX1GEK+wFwTxinpBEK+oFwTxiuq5haUYi4k4B68ua0G8opg7GIB0JuAevD5ZCeIVxaxB
-        LAvg9clKEK8oZhpiGQevj1mJVrMK3rEkiFcUswixaOng9THL0GqWwzuWBPGKYvYglm3w+mQliFcUsxix
-        1Dt7WQjiFcXMRizz4fXJShCvKOYuYrkPr48p1GCXJUhHL9KrTSrUYJd3GA+Ltt/Dq81SEK+okYWwaNur
-        yVoQr6ieX5gCy1T8hlebpSBeUcwDrEU66/EQXh9TiMF+Gxp4jbICWlh6x8h1sH/DRrSazfgO75idEsQr
-        MkfQbo7CO2anBPGKjG4VtRtNCN4xYx7jMOZgTM1c6GQ+Qbo+SLqg2zQLHsQgxKLHDkG11i9I8qDd9hOr
-        0Ww0Y9qbCfqlD95N+9BMRmB332blANT3Ff77FL8i/QTdoDFR73Ky6B7BVajPcajP09r+VvTnJpJP0C26
-        5pvJWahe6zn7qa0JQG2Xqnu1zEQeN7FnoVH2Q7X6Tkr+qNNspvbX1b1E7G+Fbt4HHgXLGczr2+yPljSa
-        DP5glxoSGQ0dQ8Mit9iYHFndq1R2QPs663vVQGZAfx+o/ZgaUtFJ0GM68bnlBfQi7NLS2bXBLBegGUnb
-        5+FFX5p6/Hl1L6dcgV5EerDrDo3WdvaG9O/UQHixwX65updT7FLSsmOwGhLRxPMI+v2v7w4v6vMMOsZ2
-        NeSVobBLR2urdHSp6a5lLLYYfYkhasgzm6DZSMuNeveT01kH/RpV3w1qKEJOQme2nUXjCRQmWnqchl6Y
-        2DJeNwGH12h2Si7j9UmcgvfXRu7Reukt7A3FvMEWFDrDsBMXobP/o0bbatNjmiRSqVT+AQ66zTVZKKFH
-        AAAAAElFTkSuQmCC
+  <data name="InfoLabel.Text" xml:space="preserve">
+    <value>Чтобы создать персонажа, необходимо определится с его игровой информацией.
+Имя позволит вам отличать одного персонажа от другого, оно должно быть длинной не более 15 символов.
+Мировоззрение даст определенные коэффициенты для определенных действий. Например, при добром мировоззрении будут штрафы к воровству.
+Уровень персонажа определяет его "прокачанность". С каждым уровнем герой прибавляет в характеристиках. 
+Класс персонажа пдаёт определенные плюсы к характеристикам. Например, воин получает прибавку к телу, а маг - к духу.
+Тело - характеристика, влияющая на физические действия.
+Разум - характеристика, влияющая на интеллектуальные действия.
+Дух - характеристика, влияющая на магические действия.
 </value>
   </data>
-  <metadata name="createPersonControlBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
