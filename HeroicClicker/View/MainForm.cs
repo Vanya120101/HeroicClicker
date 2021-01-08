@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroicClicker.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,26 @@ namespace HeroicClicker
 
         private const int cGrip = 16;
         private const int cCaption = 32;
+
         public MainForm()
         {
             InitializeComponent();
+
+            PersonControl personControl = new PersonControl();
+            personControl.Dock = DockStyle.Fill;
+            ContentPanel.Controls.Add(personControl);
+
+            StoryControl storyControl = new StoryControl();
+            storyControl.Dock = DockStyle.Fill;
+            ContentPanel.Controls.Add(storyControl);
+
+            FightControl fightControl = new FightControl();
+            fightControl.Dock = DockStyle.Fill;
+            ContentPanel.Controls.Add(fightControl);
+
+            AchievementControl achievementControl = new AchievementControl();
+            achievementControl.Dock = DockStyle.Fill;
+            ContentPanel.Controls.Add(achievementControl);
 
 
 
@@ -115,7 +133,7 @@ namespace HeroicClicker
         }
 
         /// <summary>
-        /// Перемещение формы.
+        /// Изменение размера формы.
         /// </summary>
         /// <param name="m"></param>
         protected override void WndProc(ref Message m)
@@ -183,24 +201,63 @@ namespace HeroicClicker
             this.WindowState = FormWindowState.Minimized;
         }
 
+        /// <summary>
+        /// Нажатие на кнопку персонажа в меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PersonButton_Click(object sender, EventArgs e)
         {
+            Control[] controls = ContentPanel.Controls.Find("PersonControl", false);
+            foreach (Control control in controls)
+            {
+                control.BringToFront();
+            }
             ClickButton(sender);
-
         }
 
+        /// <summary>
+        /// Нажатие на кнопку "история" в меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StoryButton_Click(object sender, EventArgs e)
         {
+            Control[] controls = ContentPanel.Controls.Find("StoryControl", false);
+            foreach (Control control in controls)
+            {
+                control.BringToFront();
+            }
             ClickButton(sender);
         }
 
+        /// <summary>
+        /// Нажатие на кнопку "Битвы" в меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FightButton_Click(object sender, EventArgs e)
         {
+            Control[] controls = ContentPanel.Controls.Find("FightControl", false);
+            foreach (Control control in controls)
+            {
+                control.BringToFront();
+            }
             ClickButton(sender);
         }
 
+        /// <summary>
+        /// Нажатие на кнопку "Достижения" в меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AchievementButton_Click(object sender, EventArgs e)
         {
+            Control[] controls = ContentPanel.Controls.Find("AchievementControl", false);
+            foreach (Control control in controls)
+            {
+                control.BringToFront();
+            }
             ClickButton(sender);
         }
 
