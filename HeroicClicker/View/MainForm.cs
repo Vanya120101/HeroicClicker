@@ -45,7 +45,7 @@ namespace HeroicClicker
             this.LeftMenu.Width = 200;
 
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.DoubleBuffered = true; //Мешает меню.
+            this.DoubleBuffered = true; //Мешает меню.
             this.SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
@@ -76,16 +76,16 @@ namespace HeroicClicker
             //TODO: сделать его асинхронно
             if (isOpenedMenu)
             {
-                for (int i = 0; i <= 40; i++)
+                for (int i = 0; i <= 10; i++)
                 {
-                    LeftMenu.Width = 200 - (i * 5);
+                    LeftMenu.Width = 200 - (i * 20);
                 }
             }
             else
             {
-                for (int i = 0; i <= 40; i++)
+                for (int i = 0; i <= 10; i++)
                 {
-                    LeftMenu.Width = i * 5;
+                    LeftMenu.Width = i * 20;
                 }
             }
             isOpenedMenu = !isOpenedMenu;

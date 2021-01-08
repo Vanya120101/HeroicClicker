@@ -61,7 +61,7 @@ namespace HeroicClicker
             this.LeftMenu.ForeColor = System.Drawing.Color.Coral;
             this.LeftMenu.Location = new System.Drawing.Point(0, 100);
             this.LeftMenu.Name = "LeftMenu";
-            this.LeftMenu.Size = new System.Drawing.Size(200, 520);
+            this.LeftMenu.Size = new System.Drawing.Size(200, 505);
             this.LeftMenu.TabIndex = 0;
             // 
             // IndicatorSelected
@@ -294,7 +294,7 @@ namespace HeroicClicker
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.Location = new System.Drawing.Point(200, 100);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(903, 520);
+            this.ContentPanel.Size = new System.Drawing.Size(903, 505);
             this.ContentPanel.TabIndex = 2;
             // 
             // MainForm
@@ -302,15 +302,18 @@ namespace HeroicClicker
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 620);
             this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.LeftMenu);
             this.Controls.Add(this.TopMenu);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
