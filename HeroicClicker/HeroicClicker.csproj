@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Presenter\PersonPresenter.cs" />
     <Compile Include="View\Controls\AchievementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Controls\AchievementControl.Designer.cs">
       <DependentUpon>AchievementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\ProfilPersonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\ProfilPersonControl.Designer.cs">
+      <DependentUpon>ProfilPersonControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\CreatePersonControl.cs">
       <SubType>UserControl</SubType>
@@ -65,7 +73,9 @@
     <Compile Include="View\Controls\FightControl.Designer.cs">
       <DependentUpon>FightControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IMainForm.cs" />
+    <Compile Include="View\Interfaces\IProfilPersonControl.cs" />
+    <Compile Include="View\Interfaces\ICreatePersonControl.cs" />
+    <Compile Include="View\Interfaces\IMainForm.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +108,9 @@
     <EmbeddedResource Include="View\Controls\AchievementControl.resx">
       <DependentUpon>AchievementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\ProfilPersonControl.resx">
+      <DependentUpon>ProfilPersonControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\CreatePersonControl.resx">
       <DependentUpon>CreatePersonControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,7 +141,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Infrastructure\Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

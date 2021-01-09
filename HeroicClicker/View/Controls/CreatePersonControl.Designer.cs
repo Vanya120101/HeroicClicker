@@ -66,7 +66,7 @@ namespace HeroicClicker.View.Controls
             this.CreatePersonLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.CreatePersonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CreatePersonLabel.Location = new System.Drawing.Point(0, 0);
-            this.CreatePersonLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 30);
+            this.CreatePersonLabel.Margin = new System.Windows.Forms.Padding(3);
             this.CreatePersonLabel.Name = "CreatePersonLabel";
             this.CreatePersonLabel.Size = new System.Drawing.Size(1387, 39);
             this.CreatePersonLabel.TabIndex = 0;
@@ -155,6 +155,7 @@ namespace HeroicClicker.View.Controls
             this.RandomButton.TabIndex = 24;
             this.RandomButton.Text = "Рандом";
             this.RandomButton.UseVisualStyleBackColor = true;
+            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
             // 
             // CancelButton
             // 
@@ -168,6 +169,7 @@ namespace HeroicClicker.View.Controls
             this.CancelButton.TabIndex = 23;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // DownloadButton
             // 
@@ -194,6 +196,7 @@ namespace HeroicClicker.View.Controls
             this.CreateButton.TabIndex = 8;
             this.CreateButton.Text = "Создать";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // ClassBox
             // 

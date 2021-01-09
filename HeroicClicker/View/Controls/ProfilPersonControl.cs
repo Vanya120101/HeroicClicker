@@ -1,4 +1,5 @@
-﻿using HeroicClicker.View.Interfaces;
+﻿using HeroicClicker.Model;
+using HeroicClicker.View.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 namespace HeroicClicker.View.Controls
 {
 
-    public partial class CreatePersonControl : UserControl, ICreatePersonControl
+    public partial class ProfilPersonControl : UserControl, IProfilPersonControl
     {
         #region Свойства
         public string NameOfPerson
@@ -23,7 +24,7 @@ namespace HeroicClicker.View.Controls
 
         public WorldView? WorldViewOfPerson
         {
-            get 
+            get
             {
                 if (WorldviewBox.SelectedItem == null)
                 {
@@ -40,7 +41,7 @@ namespace HeroicClicker.View.Controls
 
         public int LevelOfPerson
         {
-            get 
+            get
             {
                 int result;
                 if (Int32.TryParse(LvlBox.Text, out result))
@@ -74,7 +75,7 @@ namespace HeroicClicker.View.Controls
         }
         public int BodyOfPerson
         {
-            get 
+            get
             {
                 int result;
                 if (Int32.TryParse(BodyBox.Text, out result))
@@ -123,53 +124,39 @@ namespace HeroicClicker.View.Controls
             }
             set { SpiritBox.Text = value.ToString(); }
         }
-        #endregion
-        public event Action CreatePerson;
-        public event Action RandomCreatePerson;
-        public event Action CancelCreatePerson;
 
-        private string log;
-        public CreatePersonControl()
+        public BindingList<Person> Persons { get; set; }
+
+        public event Action CreateNewPerson;
+        public event Action EditPerson;
+
+        #endregion
+
+
+        public ProfilPersonControl()
         {
             InitializeComponent();
-
-            this.WorldviewBox.DataSource = Enum.GetValues(typeof(WorldView));
-            this.WorldviewBox.SelectedItem = null;
-
-            this.ClassBox.DataSource = Enum.GetValues(typeof(Class));
-            this.ClassBox.SelectedItem = null;
-        }
-
-        private void CreateButton_Click(object sender, EventArgs e)
-        {
-            if (CreatePerson != null)
-            {
-                CreatePerson.Invoke();
-            }
+            ClassBox.DataSource = Enum.GetValues(typeof(Class));
+            WorldviewBox.DataSource = Enum.GetValues(typeof(WorldView));
+            Persons = new BindingList<Person>();
+            this.ListOfPersons.DataSource = Persons;
 
         }
 
-        private void RandomButton_Click(object sender, EventArgs e)
+        private void CreatePersonButton_Click(object sender, EventArgs e)
         {
-            if (RandomCreatePerson != null)
+            if (CreateNewPerson != null)
             {
-                RandomCreatePerson.Invoke();
+                CreateNewPerson.Invoke();
             }
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void EditPersonButton_Click(object sender, EventArgs e)
         {
-            if (CancelCreatePerson != null)
+            if (EditPerson != null)
             {
-                CancelCreatePerson.Invoke();
+                EditPerson.Invoke();
             }
         }
-
-        public void ShowError(string messageError)
-        {
-            MessageBox.Show(messageError);
-        }
-
-
     }
 }

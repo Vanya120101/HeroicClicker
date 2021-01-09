@@ -1,6 +1,9 @@
-﻿using HeroicClicker.View;
+﻿using HeroicClicker.Presenter;
+using HeroicClicker.View;
 using HeroicClicker.View.Controls;
+using HeroicClicker.View.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,31 +15,45 @@ using System.Windows.Forms;
 
 namespace HeroicClicker
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IMainForm
     {
+
+        #region Переменные
         private bool isOpenedMenu = true;
         private Point moveStart;
 
         private const int cGrip = 16;
         private const int cCaption = 32;
+        #endregion
 
-      
+        public List<Control> ListOfControls { get; set; }
+
 
         public MainForm()
         {
             InitializeComponent();
 
+            ListOfControls = new List<Control>();
+
             CreateControls();
 
-
-
             this.LeftMenu.Width = 200;
-
             this.FormBorderStyle = FormBorderStyle.None;
-            this.DoubleBuffered = true; //Мешает меню.
+           // this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-
         }
+
+        public UserControl GetControl(string controlName)
+        {
+            Control[] controls = ContentPanel.Controls.Find(controlName, false);
+            foreach (Control control in controls)
+            {
+                return control as UserControl;
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Создание контролов.
         /// </summary>
@@ -47,9 +64,9 @@ namespace HeroicClicker
             FightControl fightControl = new FightControl();
             AchievementControl achievementControl = new AchievementControl();
             CreatePersonControl createPersonControl = new CreatePersonControl();
+            ProfilPersonControl profilPersonControl = new ProfilPersonControl();
 
-          
-            AdjustControls(personControl, storyControl, fightControl, achievementControl, createPersonControl);
+            AdjustControls(personControl, storyControl, fightControl, achievementControl, createPersonControl, profilPersonControl);
         }
         /// <summary>
         /// Настраивание контролов.
@@ -60,6 +77,7 @@ namespace HeroicClicker
             foreach (Control control in controls)
             {
                 control.Dock = DockStyle.Fill;
+                ListOfControls.Add(control);
                 ContentPanel.Controls.Add(control);
             }
         }
@@ -258,6 +276,9 @@ namespace HeroicClicker
                 control.BringToFront();
             }
             ClickButton(sender);
+
+            
+                
         }
 
         /// <summary>
