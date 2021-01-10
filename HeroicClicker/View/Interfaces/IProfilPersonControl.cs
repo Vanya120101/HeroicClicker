@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace HeroicClicker.View.Interfaces
 {
-    interface IProfilPersonControl
+    interface IProfilPersonControl : IControl
     {
         string NameOfPerson { get; set; }
         WorldView? WorldViewOfPerson { get; set; }

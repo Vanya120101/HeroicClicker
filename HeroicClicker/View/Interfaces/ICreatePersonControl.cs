@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace HeroicClicker.View.Interfaces
 {
 
-    interface ICreatePersonControl
+    interface ICreatePersonControl : IControl
     {
         string NameOfPerson { get; set; }
         WorldView? WorldViewOfPerson { get; set; }

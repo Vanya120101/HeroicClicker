@@ -14,6 +14,10 @@ namespace HeroicClicker.Presenter
 
         Person CurrentPerson;
         BindingList<Person> Persons;
+        public int CountOfPersons
+        {
+            get { return Persons.Count; }
+        }
         ICreatePersonControl CreatePersonControl;
         IProfilPersonControl ProfilPersonControl;
         public PersonPresenter(ICreatePersonControl createPersonControl, IProfilPersonControl profilPersonControl)

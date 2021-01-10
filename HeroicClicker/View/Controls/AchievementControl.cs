@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroicClicker.View.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HeroicClicker.View.Controls
 {
-    public partial class AchievementControl : UserControl
+    public partial class AchievementControl : UserControl, IAchievementControl
     {
         public AchievementControl()
         {

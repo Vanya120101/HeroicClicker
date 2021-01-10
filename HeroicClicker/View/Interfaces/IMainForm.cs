@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroicClicker.Presenter;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,17 @@ namespace HeroicClicker.View.Interfaces
 {
     interface IMainForm
     {
-        List<Control> ListOfControls { get; set; }
+
+        Control.ControlCollection ControlsOfContentPanel { get;}
+
+        event ButtonEvent PersonButtonClick;
+        event ButtonEvent StoryButtonClick;
+        event ButtonEvent FightButtonClick;
+        event ButtonEvent AchievementButtonClick;
+
+
+
+
 
     }
 }
