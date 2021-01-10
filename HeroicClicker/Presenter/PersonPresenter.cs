@@ -13,6 +13,7 @@ namespace HeroicClicker.Presenter
     {
 
         Person CurrentPerson;
+        BindingList<Person> Persons;
         ICreatePersonControl CreatePersonControl;
         IProfilPersonControl ProfilPersonControl;
         public PersonPresenter(ICreatePersonControl createPersonControl, IProfilPersonControl profilPersonControl)
@@ -25,8 +26,18 @@ namespace HeroicClicker.Presenter
 
             ProfilPersonControl = profilPersonControl;
             ProfilPersonControl.CreateNewPerson += ShowCreatPersonPanel;
+            ProfilPersonControl.DeletePerson += DeletePerson;
+            ProfilPersonControl.ChoosePerson += ChoosePerson;
 
+            Persons = BasePresenter.Load();
+            Persons.ListChanged += Persons_ListChanged;
+            ProfilPersonControl.Persons = Persons;
 
+        }
+
+        private void Persons_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            BasePresenter.Save(Persons);
         }
 
         private void CreatePerson()
@@ -78,9 +89,12 @@ namespace HeroicClicker.Presenter
                                         CreatePersonControl.SpiritOfPerson);
 
             CurrentPerson = person;
-            ProfilPersonControl.Persons.Add(CurrentPerson);
+            //ProfilPersonControl.Persons.Add(CurrentPerson);
+            Persons.Add(CurrentPerson);
 
+            ClearFilesCreatePersonControl();
             SetCharacteristic();
+
             ProfilPersonControl.BringToFront();
             
 
@@ -88,13 +102,49 @@ namespace HeroicClicker.Presenter
 
         private void PersonCreateRandom()
         {
-            CreatePersonControl.NameOfPerson = "Vanya";
-            CreatePersonControl.WorldViewOfPerson = WorldView.Злой;
-            CreatePersonControl.LevelOfPerson = 12;
-            CreatePersonControl.ClassOfPerson = Class.Маг;
-            CreatePersonControl.BodyOfPerson = 12;
-            CreatePersonControl.MindOfPerson = 13;
-            CreatePersonControl.SpiritOfPerson = 13;
+            Random random = new Random();
+
+
+            CreatePersonControl.ClassOfPerson = (Class)random.Next(1, 4);
+            CreatePersonControl.WorldViewOfPerson = (WorldView)random.Next(1, 4);
+
+            string name;
+            switch (random.Next(1,7))
+            {
+                case 1:
+                    name = "Алиса";
+                    break;
+                case 2:
+                    name = "Беатрисс";
+                    break;
+                case 3:
+                    name = "Венди";
+                    break;
+                case 4:
+                    name = "Розвель";
+                    break;
+                case 5:
+                    name = "Питер";
+                    break;
+                case 6:
+                    name = "Джерар";
+                    break;
+                default:
+                    name = "Неизвестный";
+                    break;
+            }
+            CreatePersonControl.NameOfPerson = name;
+            int result = 0;
+            while (result < 20)
+            {
+                CreatePersonControl.BodyOfPerson = random.Next(5,11);
+                CreatePersonControl.MindOfPerson = random.Next(5, 11);
+                CreatePersonControl.SpiritOfPerson = random.Next(5, 11);
+                result = CreatePersonControl.BodyOfPerson + CreatePersonControl.MindOfPerson + CreatePersonControl.SpiritOfPerson;
+            }
+
+            CreatePersonControl.LevelOfPerson = 1;
+
         }
 
         private void CancelCreatePersonControl()
@@ -120,6 +170,63 @@ namespace HeroicClicker.Presenter
             ProfilPersonControl.BodyOfPerson = CurrentPerson.Body;
             ProfilPersonControl.MindOfPerson = CurrentPerson.Mind;
             ProfilPersonControl.SpiritOfPerson = CurrentPerson.Spirit;
+        }
+        private void DeletePerson()
+        {
+            if (ProfilPersonControl.SelectedPerson == null)
+            {
+                ProfilPersonControl.ShowError("Персонаж для удаления не выбран");
+                return;
+            }
+            if (ProfilPersonControl.SelectedPerson == CurrentPerson)
+            {
+                ClearFilesProfilPersonControl();
+            }
+            // ProfilPersonControl.Persons.Remove(ProfilPersonControl.SelectedPerson);
+            Persons.Remove(ProfilPersonControl.SelectedPerson);
+            //if (ProfilPersonControl.Persons.Count > 0)
+            //{
+            //    ProfilPersonControl.SelectedPerson = ProfilPersonControl.Persons[0];
+
+            //}
+            if (Persons.Count>0)
+            {
+                ProfilPersonControl.SelectedPerson = Persons[0];
+            }
+        }
+
+        private void ChoosePerson()
+        {
+            if (ProfilPersonControl.SelectedPerson == null)
+            {
+                ProfilPersonControl.ShowError("Персонаж для установки не выбран");
+                return;
+            }
+
+            CurrentPerson = ProfilPersonControl.SelectedPerson;
+            SetCharacteristic();
+        }
+
+        private void ClearFilesCreatePersonControl()
+        {
+            CreatePersonControl.NameOfPerson = null;
+            CreatePersonControl.WorldViewOfPerson = null;
+            CreatePersonControl.LevelOfPerson = -1;
+            CreatePersonControl.ClassOfPerson = null;
+            CreatePersonControl.BodyOfPerson = -1;
+            CreatePersonControl.MindOfPerson = -1;
+            CreatePersonControl.SpiritOfPerson = -1;
+        }
+
+        private void ClearFilesProfilPersonControl()
+        {
+            ProfilPersonControl.NameOfPerson = null;
+            ProfilPersonControl.WorldViewOfPerson = null;
+            ProfilPersonControl.LevelOfPerson = -1;
+            ProfilPersonControl.ClassOfPerson = null;
+            ProfilPersonControl.BodyOfPerson = -1;
+            ProfilPersonControl.MindOfPerson = -1;
+            ProfilPersonControl.SpiritOfPerson = -1;
         }
     }
 }

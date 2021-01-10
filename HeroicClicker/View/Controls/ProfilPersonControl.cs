@@ -19,7 +19,15 @@ namespace HeroicClicker.View.Controls
         public string NameOfPerson
         {
             get { return NameBox.Text; }
-            set { NameBox.Text = value; }
+            set
+            {
+                if (value == null)
+                {
+                    NameBox.Clear();
+                    return;
+                }
+                NameBox.Text = value;
+            }
         }
 
         public WorldView? WorldViewOfPerson
@@ -36,7 +44,10 @@ namespace HeroicClicker.View.Controls
 
                 }
             }
-            set { WorldviewBox.SelectedItem = value; }
+            set
+            {
+                WorldviewBox.SelectedItem = value;
+            }
         }
 
         public int LevelOfPerson
@@ -54,7 +65,16 @@ namespace HeroicClicker.View.Controls
                     return 0;
                 }
             }
-            set { LvlBox.Text = value.ToString(); }
+            set
+            {
+                if (value < 0)
+                {
+                    LvlBox.Clear();
+                    return;
+
+                }
+                LvlBox.Text = value.ToString();
+            }
         }
 
         public Class? ClassOfPerson
@@ -88,7 +108,15 @@ namespace HeroicClicker.View.Controls
                     return 0;
                 }
             }
-            set { BodyBox.Text = value.ToString(); }
+            set
+            {
+                if (value < 0)
+                {
+                    BodyBox.Clear();
+                    return;
+                }
+                BodyBox.Text = value.ToString();
+            }
         }
         public int MindOfPerson
         {
@@ -105,7 +133,15 @@ namespace HeroicClicker.View.Controls
                     return 0;
                 }
             }
-            set { MindBox.Text = value.ToString(); }
+            set
+            {
+                if (value < 0)
+                {
+                    MindBox.Clear();
+                    return;
+                }
+                MindBox.Text = value.ToString();
+            }
         }
         public int SpiritOfPerson
         {
@@ -122,26 +158,50 @@ namespace HeroicClicker.View.Controls
                     return 0;
                 }
             }
-            set { SpiritBox.Text = value.ToString(); }
+            set
+            {
+                if (value < 0)
+                {
+                    SpiritBox.Clear();
+                    return;
+                }
+                SpiritBox.Text = value.ToString();
+            }
+        }
+        #endregion
+        public Person SelectedPerson
+        {
+            get { return this.ListOfPersons.SelectedItem as Person; }
+            set { this.ListOfPersons.SelectedItem = value; }
+        }
+        //public BindingList<Person> Persons { get; set; }
+
+        public BindingList<Person> Persons
+        {
+            
+            set { this.ListOfPersons.DataSource = value; }
         }
 
-        public BindingList<Person> Persons { get; set; }
+
+
 
         public event Action CreateNewPerson;
-        public event Action EditPerson;
+        public event Action DeletePerson;
+        public event Action ChoosePerson;
 
-        #endregion
 
 
         public ProfilPersonControl()
         {
             InitializeComponent();
             ClassBox.DataSource = Enum.GetValues(typeof(Class));
+            ClassBox.SelectedItem = null;
             WorldviewBox.DataSource = Enum.GetValues(typeof(WorldView));
-            Persons = new BindingList<Person>();
-            this.ListOfPersons.DataSource = Persons;
+            WorldviewBox.SelectedItem = null;
 
         }
+
+   
 
         private void CreatePersonButton_Click(object sender, EventArgs e)
         {
@@ -151,12 +211,27 @@ namespace HeroicClicker.View.Controls
             }
         }
 
-        private void EditPersonButton_Click(object sender, EventArgs e)
+
+
+        private void DeletePersonButton_Click(object sender, EventArgs e)
         {
-            if (EditPerson != null)
+            if (DeletePerson != null)
             {
-                EditPerson.Invoke();
+                DeletePerson.Invoke();
             }
+        }
+
+        private void ChoosePersonButton_Click(object sender, EventArgs e)
+        {
+            if (ChoosePerson != null)
+            {
+                ChoosePerson.Invoke();
+            }
+        }
+
+        public void ShowError(string messageError)
+        {
+            MessageBox.Show(messageError);
         }
     }
 }

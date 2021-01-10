@@ -10,7 +10,7 @@ namespace HeroicClicker.View.Interfaces
 {
     interface IMainForm
     {
-        UserControl GetControl(string controlName);
         List<Control> ListOfControls { get; set; }
+
     }
 }

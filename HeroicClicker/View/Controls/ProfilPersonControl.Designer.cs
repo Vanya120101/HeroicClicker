@@ -51,14 +51,15 @@ namespace HeroicClicker.View.Controls
             this.AvatarLabel = new System.Windows.Forms.Label();
             this.AvatarBox = new System.Windows.Forms.PictureBox();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.EditPersonButton = new System.Windows.Forms.Button();
-            this.CreatePersonButton = new System.Windows.Forms.Button();
             this.ListOfPersons = new System.Windows.Forms.ListBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.DeletePersonButton = new System.Windows.Forms.Button();
+            this.ChoosePersonButton = new System.Windows.Forms.Button();
+            this.CreatePersonButton = new System.Windows.Forms.Button();
             this.LayounPanel.SuspendLayout();
             this.PersonProfilPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarBox)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProfilPersonLabel
@@ -81,16 +82,15 @@ namespace HeroicClicker.View.Controls
             this.LayounPanel.AutoScroll = true;
             this.LayounPanel.BackColor = System.Drawing.Color.White;
             this.LayounPanel.Controls.Add(this.PersonProfilPanel);
-            this.LayounPanel.Controls.Add(this.panel1);
+            this.LayounPanel.Controls.Add(this.flowLayoutPanel1);
             this.LayounPanel.Location = new System.Drawing.Point(0, 39);
             this.LayounPanel.Name = "LayounPanel";
-            this.LayounPanel.Padding = new System.Windows.Forms.Padding(200, 50, 50, 10);
+            this.LayounPanel.Padding = new System.Windows.Forms.Padding(50, 50, 50, 10);
             this.LayounPanel.Size = new System.Drawing.Size(1387, 1079);
             this.LayounPanel.TabIndex = 22;
             // 
             // PersonProfilPanel
             // 
-            this.PersonProfilPanel.AutoSize = true;
             this.PersonProfilPanel.BackColor = System.Drawing.Color.White;
             this.PersonProfilPanel.Controls.Add(this.ClassBox);
             this.PersonProfilPanel.Controls.Add(this.WorldviewLabel);
@@ -110,10 +110,10 @@ namespace HeroicClicker.View.Controls
             this.PersonProfilPanel.Controls.Add(this.AvatarLabel);
             this.PersonProfilPanel.Controls.Add(this.AvatarBox);
             this.PersonProfilPanel.Controls.Add(this.NameBox);
-            this.PersonProfilPanel.Location = new System.Drawing.Point(203, 53);
+            this.PersonProfilPanel.Location = new System.Drawing.Point(53, 53);
             this.PersonProfilPanel.Margin = new System.Windows.Forms.Padding(3, 3, 150, 3);
             this.PersonProfilPanel.Name = "PersonProfilPanel";
-            this.PersonProfilPanel.Size = new System.Drawing.Size(554, 325);
+            this.PersonProfilPanel.Size = new System.Drawing.Size(711, 325);
             this.PersonProfilPanel.TabIndex = 23;
             // 
             // ClassBox
@@ -122,7 +122,7 @@ namespace HeroicClicker.View.Controls
             this.ClassBox.FormattingEnabled = true;
             this.ClassBox.Location = new System.Drawing.Point(430, 183);
             this.ClassBox.Name = "ClassBox";
-            this.ClassBox.Size = new System.Drawing.Size(121, 37);
+            this.ClassBox.Size = new System.Drawing.Size(278, 37);
             this.ClassBox.TabIndex = 21;
             // 
             // WorldviewLabel
@@ -141,7 +141,7 @@ namespace HeroicClicker.View.Controls
             this.WorldviewBox.FormattingEnabled = true;
             this.WorldviewBox.Location = new System.Drawing.Point(430, 112);
             this.WorldviewBox.Name = "WorldviewBox";
-            this.WorldviewBox.Size = new System.Drawing.Size(121, 37);
+            this.WorldviewBox.Size = new System.Drawing.Size(278, 37);
             this.WorldviewBox.TabIndex = 8;
             // 
             // SpiritBox
@@ -149,7 +149,7 @@ namespace HeroicClicker.View.Controls
             this.SpiritBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SpiritBox.Location = new System.Drawing.Point(430, 288);
             this.SpiritBox.Name = "SpiritBox";
-            this.SpiritBox.Size = new System.Drawing.Size(121, 34);
+            this.SpiritBox.Size = new System.Drawing.Size(278, 34);
             this.SpiritBox.TabIndex = 19;
             // 
             // InformationLabel
@@ -167,7 +167,7 @@ namespace HeroicClicker.View.Controls
             this.MindBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MindBox.Location = new System.Drawing.Point(430, 254);
             this.MindBox.Name = "MindBox";
-            this.MindBox.Size = new System.Drawing.Size(121, 34);
+            this.MindBox.Size = new System.Drawing.Size(278, 34);
             this.MindBox.TabIndex = 17;
             // 
             // BodyBox
@@ -176,7 +176,7 @@ namespace HeroicClicker.View.Controls
             this.BodyBox.Location = new System.Drawing.Point(430, 220);
             this.BodyBox.MaxLength = 2;
             this.BodyBox.Name = "BodyBox";
-            this.BodyBox.Size = new System.Drawing.Size(121, 34);
+            this.BodyBox.Size = new System.Drawing.Size(278, 34);
             this.BodyBox.TabIndex = 16;
             // 
             // LvlBox
@@ -184,7 +184,7 @@ namespace HeroicClicker.View.Controls
             this.LvlBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LvlBox.Location = new System.Drawing.Point(430, 149);
             this.LvlBox.Name = "LvlBox";
-            this.LvlBox.Size = new System.Drawing.Size(121, 34);
+            this.LvlBox.Size = new System.Drawing.Size(278, 34);
             this.LvlBox.TabIndex = 14;
             // 
             // SpiritLabel
@@ -282,32 +282,58 @@ namespace HeroicClicker.View.Controls
             this.NameBox.Location = new System.Drawing.Point(430, 78);
             this.NameBox.MaxLength = 15;
             this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(121, 34);
+            this.NameBox.Size = new System.Drawing.Size(278, 34);
             this.NameBox.TabIndex = 4;
             // 
-            // panel1
+            // ListOfPersons
             // 
-            this.panel1.Controls.Add(this.EditPersonButton);
-            this.panel1.Controls.Add(this.CreatePersonButton);
-            this.panel1.Controls.Add(this.ListOfPersons);
-            this.panel1.Location = new System.Drawing.Point(203, 384);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 489);
-            this.panel1.TabIndex = 25;
+            this.ListOfPersons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListOfPersons.FormattingEnabled = true;
+            this.ListOfPersons.ItemHeight = 25;
+            this.ListOfPersons.Location = new System.Drawing.Point(3, 3);
+            this.ListOfPersons.Name = "ListOfPersons";
+            this.ListOfPersons.Size = new System.Drawing.Size(517, 279);
+            this.ListOfPersons.Sorted = true;
+            this.ListOfPersons.TabIndex = 24;
             // 
-            // EditPersonButton
+            // flowLayoutPanel1
             // 
-            this.EditPersonButton.AutoSize = true;
-            this.EditPersonButton.FlatAppearance.BorderSize = 0;
-            this.EditPersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditPersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditPersonButton.Location = new System.Drawing.Point(296, 434);
-            this.EditPersonButton.Name = "EditPersonButton";
-            this.EditPersonButton.Size = new System.Drawing.Size(275, 35);
-            this.EditPersonButton.TabIndex = 26;
-            this.EditPersonButton.Text = "Изменить персонажа";
-            this.EditPersonButton.UseVisualStyleBackColor = true;
-            this.EditPersonButton.Click += new System.EventHandler(this.EditPersonButton_Click);
+            this.flowLayoutPanel1.Controls.Add(this.ListOfPersons);
+            this.flowLayoutPanel1.Controls.Add(this.ChoosePersonButton);
+            this.flowLayoutPanel1.Controls.Add(this.CreatePersonButton);
+            this.flowLayoutPanel1.Controls.Add(this.DeletePersonButton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(53, 384);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 516);
+            this.flowLayoutPanel1.TabIndex = 26;
+            // 
+            // DeletePersonButton
+            // 
+            this.DeletePersonButton.AutoSize = true;
+            this.DeletePersonButton.FlatAppearance.BorderSize = 0;
+            this.DeletePersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeletePersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeletePersonButton.Location = new System.Drawing.Point(3, 370);
+            this.DeletePersonButton.Name = "DeletePersonButton";
+            this.DeletePersonButton.Size = new System.Drawing.Size(275, 35);
+            this.DeletePersonButton.TabIndex = 30;
+            this.DeletePersonButton.Text = "Удалить персонажа";
+            this.DeletePersonButton.UseVisualStyleBackColor = true;
+            this.DeletePersonButton.Click += new System.EventHandler(this.DeletePersonButton_Click);
+            // 
+            // ChoosePersonButton
+            // 
+            this.ChoosePersonButton.AutoSize = true;
+            this.ChoosePersonButton.FlatAppearance.BorderSize = 0;
+            this.ChoosePersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChoosePersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChoosePersonButton.Location = new System.Drawing.Point(3, 288);
+            this.ChoosePersonButton.Name = "ChoosePersonButton";
+            this.ChoosePersonButton.Size = new System.Drawing.Size(275, 35);
+            this.ChoosePersonButton.TabIndex = 29;
+            this.ChoosePersonButton.Text = "Выбрать персонажа";
+            this.ChoosePersonButton.UseVisualStyleBackColor = true;
+            this.ChoosePersonButton.Click += new System.EventHandler(this.ChoosePersonButton_Click);
             // 
             // CreatePersonButton
             // 
@@ -315,24 +341,13 @@ namespace HeroicClicker.View.Controls
             this.CreatePersonButton.FlatAppearance.BorderSize = 0;
             this.CreatePersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreatePersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreatePersonButton.Location = new System.Drawing.Point(25, 434);
+            this.CreatePersonButton.Location = new System.Drawing.Point(3, 329);
             this.CreatePersonButton.Name = "CreatePersonButton";
             this.CreatePersonButton.Size = new System.Drawing.Size(275, 35);
-            this.CreatePersonButton.TabIndex = 25;
+            this.CreatePersonButton.TabIndex = 28;
             this.CreatePersonButton.Text = "Создать персонажа";
             this.CreatePersonButton.UseVisualStyleBackColor = true;
             this.CreatePersonButton.Click += new System.EventHandler(this.CreatePersonButton_Click);
-            // 
-            // ListOfPersons
-            // 
-            this.ListOfPersons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListOfPersons.FormattingEnabled = true;
-            this.ListOfPersons.ItemHeight = 25;
-            this.ListOfPersons.Location = new System.Drawing.Point(23, 13);
-            this.ListOfPersons.Name = "ListOfPersons";
-            this.ListOfPersons.Size = new System.Drawing.Size(476, 404);
-            this.ListOfPersons.Sorted = true;
-            this.ListOfPersons.TabIndex = 24;
             // 
             // ProfilPersonControl
             // 
@@ -346,12 +361,11 @@ namespace HeroicClicker.View.Controls
             this.Name = "ProfilPersonControl";
             this.Size = new System.Drawing.Size(1387, 1038);
             this.LayounPanel.ResumeLayout(false);
-            this.LayounPanel.PerformLayout();
             this.PersonProfilPanel.ResumeLayout(false);
             this.PersonProfilPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarBox)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -380,8 +394,9 @@ namespace HeroicClicker.View.Controls
         private System.Windows.Forms.PictureBox AvatarBox;
         private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.ListBox ListOfPersons;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button EditPersonButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button ChoosePersonButton;
         private System.Windows.Forms.Button CreatePersonButton;
+        private System.Windows.Forms.Button DeletePersonButton;
     }
 }

@@ -18,9 +18,13 @@ namespace HeroicClicker.View.Interfaces
         int BodyOfPerson { get; set; }
         int MindOfPerson { get; set; }
         int SpiritOfPerson { get; set; }
-        BindingList<Person> Persons { get; set; }
+        BindingList<Person> Persons { set; }
+        Person SelectedPerson { get; set; }
         event Action CreateNewPerson;
-        event Action EditPerson;
+        event Action DeletePerson;
+        event Action ChoosePerson;
+
+        void ShowError(string messageError);
 
         void BringToFront();
     }

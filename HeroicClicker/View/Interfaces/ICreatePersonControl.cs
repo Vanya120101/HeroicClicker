@@ -39,4 +39,13 @@ namespace HeroicClicker.View.Interfaces
         Хилл = 2,
         Маг = 3
     }
+    public enum Names
+    {
+        Беатрисс =1,
+        Венди = 2,
+        Субару = 3,
+        Розвель = 4,
+        Джерар = 5,
+        Питер = 6
+    }
 }

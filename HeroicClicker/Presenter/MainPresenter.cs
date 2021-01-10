@@ -22,11 +22,7 @@ namespace HeroicClicker.Presenter
 
         }
 
-        public void BringToFront(string nameOfControl)
-        {
-            UserControl control = MainForm.GetControl(nameOfControl);
-            control.BringToFront();
-        }
+        
 
 
     }

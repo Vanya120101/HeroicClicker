@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace HeroicClicker.Model
 {
+    [Serializable]
     public class Person
     {
         #region Свойства
@@ -17,6 +18,7 @@ namespace HeroicClicker.Model
         public int Body { get; set; }
         public int Mind { get; set; }
         public int Spirit { get; set; }
+        public int Id { get; }
         #endregion
 
         public Person(string name, WorldView? worldView, int level, Class? @class, int body, int mind, int spirit)
@@ -57,11 +59,17 @@ namespace HeroicClicker.Model
             Body = body;
             Mind = mind;
             Spirit = spirit;
+
+            Random random = new Random();
+            Id = random.Next();
         }
 
         public override string ToString()
         {
             return $"{Name}, уровень: {Level}, класс: {Class}";
         }
+
+
+       
     }
 }
