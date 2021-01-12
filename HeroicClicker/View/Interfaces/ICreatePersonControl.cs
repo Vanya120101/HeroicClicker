@@ -22,8 +22,6 @@ namespace HeroicClicker.View.Interfaces
         event Action RandomCreatePerson;
         event Action CancelCreatePerson;
 
-        void ShowError(string messageError);
-        void BringToFront();
     }
 
     public enum WorldView

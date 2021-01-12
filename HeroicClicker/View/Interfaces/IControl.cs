@@ -9,5 +9,6 @@ namespace HeroicClicker.View.Interfaces
     interface IControl
     {
         void BringToFront();
+        void ShowError(string errorMessage);
     }
 }

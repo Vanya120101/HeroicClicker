@@ -17,5 +17,10 @@ namespace HeroicClicker.View.Controls
         {
             InitializeComponent();
         }
+
+        public void ShowError(string errorMessage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

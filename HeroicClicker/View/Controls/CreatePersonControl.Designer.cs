@@ -330,17 +330,15 @@ namespace HeroicClicker.View.Controls
             // 
             // LayounPanel
             // 
-            this.LayounPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LayounPanel.AutoScroll = true;
             this.LayounPanel.BackColor = System.Drawing.Color.White;
             this.LayounPanel.Controls.Add(this.PersonCreatePanel);
             this.LayounPanel.Controls.Add(this.InfoLabel);
+            this.LayounPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayounPanel.Location = new System.Drawing.Point(0, 39);
             this.LayounPanel.Name = "LayounPanel";
             this.LayounPanel.Padding = new System.Windows.Forms.Padding(50, 50, 50, 10);
-            this.LayounPanel.Size = new System.Drawing.Size(1387, 1079);
+            this.LayounPanel.Size = new System.Drawing.Size(1387, 999);
             this.LayounPanel.TabIndex = 22;
             // 
             // InfoLabel

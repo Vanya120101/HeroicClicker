@@ -33,7 +33,7 @@ namespace HeroicClicker.Presenter
             ProfilPersonControl.DeletePerson += DeletePerson;
             ProfilPersonControl.ChoosePerson += ChoosePerson;
 
-            Persons = BasePresenter.Load();
+            Persons = BasePresenter.Load("Persons");
             Persons.ListChanged += Persons_ListChanged;
             ProfilPersonControl.Persons = Persons;
 
@@ -41,7 +41,7 @@ namespace HeroicClicker.Presenter
 
         private void Persons_ListChanged(object sender, ListChangedEventArgs e)
         {
-            BasePresenter.Save(Persons);
+            BasePresenter.Save(Persons, "Persons");
         }
 
         private void CreatePerson()

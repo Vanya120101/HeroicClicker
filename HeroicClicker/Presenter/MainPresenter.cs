@@ -16,10 +16,12 @@ namespace HeroicClicker.Presenter
         ICreatePersonControl CreatePersonControl;
         IProfilPersonControl ProfilPersonControl;
         IStoryControl StoryControl;
+        IFightChoiceControl FightChoiceControl;
         IFightcontrol FightControl;
         IAchievementControl AchievementControl;
 
         PersonPresenter PersonPresenter;
+        FightPresenter FightPresenter;
         public MainPresenter(IMainForm mainForm)
         {
             MainForm = mainForm;
@@ -33,6 +35,9 @@ namespace HeroicClicker.Presenter
             MainForm.AchievementButtonClick += AchievementButtonClick;
 
             PersonButtonClick(this, null);
+
+            FightPresenter = new FightPresenter(FightChoiceControl);
+            
         }
 
         private void AchievementButtonClick(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace HeroicClicker.Presenter
 
         private void FightButtonClick(object sender, EventArgs e)
         {
-            FightControl.BringToFront();
+            FightChoiceControl.BringToFront();
         }
 
 
@@ -72,8 +77,9 @@ namespace HeroicClicker.Presenter
             StoryControl = new StoryControl();
             FightControl = new FightControl();
             AchievementControl = new AchievementControl();
+            FightChoiceControl = new FightChoiceControl();
 
-            AdjustControls(CreatePersonControl,ProfilPersonControl, StoryControl, FightControl, AchievementControl);
+            AdjustControls(CreatePersonControl,ProfilPersonControl, StoryControl, FightChoiceControl, FightControl, AchievementControl);
         }
         /// <summary>
         /// Настройка контроллов.

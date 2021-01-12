@@ -26,6 +26,5 @@ namespace HeroicClicker.View.Interfaces
 
         void ShowError(string messageError);
 
-        void BringToFront();
     }
 }

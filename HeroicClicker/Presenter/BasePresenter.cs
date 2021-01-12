@@ -13,9 +13,8 @@ namespace HeroicClicker.Presenter
 {
     static class BasePresenter
     {
-        public static void Save(BindingList<Person> Persons)
+        public static void Save(BindingList<Person> Persons, string path)
         {
-            string path = typeof(BindingList<Person>).ToString();
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -23,10 +22,9 @@ namespace HeroicClicker.Presenter
             }
         }
 
-        public static BindingList<Person> Load()
+        public static BindingList<Person> Load(string path)
         {
 
-            string path = typeof(BindingList<Person>).ToString();
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {

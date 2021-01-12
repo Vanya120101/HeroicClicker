@@ -51,11 +51,11 @@ namespace HeroicClicker.View.Controls
             this.AvatarLabel = new System.Windows.Forms.Label();
             this.AvatarBox = new System.Windows.Forms.PictureBox();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.ListOfPersons = new System.Windows.Forms.ListBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.DeletePersonButton = new System.Windows.Forms.Button();
+            this.ListOfPersons = new System.Windows.Forms.ListBox();
             this.ChoosePersonButton = new System.Windows.Forms.Button();
             this.CreatePersonButton = new System.Windows.Forms.Button();
+            this.DeletePersonButton = new System.Windows.Forms.Button();
             this.LayounPanel.SuspendLayout();
             this.PersonProfilPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarBox)).BeginInit();
@@ -76,17 +76,15 @@ namespace HeroicClicker.View.Controls
             // 
             // LayounPanel
             // 
-            this.LayounPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LayounPanel.AutoScroll = true;
             this.LayounPanel.BackColor = System.Drawing.Color.White;
             this.LayounPanel.Controls.Add(this.PersonProfilPanel);
             this.LayounPanel.Controls.Add(this.flowLayoutPanel1);
+            this.LayounPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayounPanel.Location = new System.Drawing.Point(0, 39);
             this.LayounPanel.Name = "LayounPanel";
             this.LayounPanel.Padding = new System.Windows.Forms.Padding(50, 50, 50, 10);
-            this.LayounPanel.Size = new System.Drawing.Size(1387, 1079);
+            this.LayounPanel.Size = new System.Drawing.Size(1387, 999);
             this.LayounPanel.TabIndex = 22;
             // 
             // PersonProfilPanel
@@ -285,6 +283,18 @@ namespace HeroicClicker.View.Controls
             this.NameBox.Size = new System.Drawing.Size(278, 34);
             this.NameBox.TabIndex = 4;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.ListOfPersons);
+            this.flowLayoutPanel1.Controls.Add(this.ChoosePersonButton);
+            this.flowLayoutPanel1.Controls.Add(this.CreatePersonButton);
+            this.flowLayoutPanel1.Controls.Add(this.DeletePersonButton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(80, 411);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(30, 30, 3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 516);
+            this.flowLayoutPanel1.TabIndex = 26;
+            // 
             // ListOfPersons
             // 
             this.ListOfPersons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -295,31 +305,6 @@ namespace HeroicClicker.View.Controls
             this.ListOfPersons.Size = new System.Drawing.Size(517, 279);
             this.ListOfPersons.Sorted = true;
             this.ListOfPersons.TabIndex = 24;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.ListOfPersons);
-            this.flowLayoutPanel1.Controls.Add(this.ChoosePersonButton);
-            this.flowLayoutPanel1.Controls.Add(this.CreatePersonButton);
-            this.flowLayoutPanel1.Controls.Add(this.DeletePersonButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(53, 384);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 516);
-            this.flowLayoutPanel1.TabIndex = 26;
-            // 
-            // DeletePersonButton
-            // 
-            this.DeletePersonButton.AutoSize = true;
-            this.DeletePersonButton.FlatAppearance.BorderSize = 0;
-            this.DeletePersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeletePersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeletePersonButton.Location = new System.Drawing.Point(3, 370);
-            this.DeletePersonButton.Name = "DeletePersonButton";
-            this.DeletePersonButton.Size = new System.Drawing.Size(275, 35);
-            this.DeletePersonButton.TabIndex = 30;
-            this.DeletePersonButton.Text = "Удалить персонажа";
-            this.DeletePersonButton.UseVisualStyleBackColor = true;
-            this.DeletePersonButton.Click += new System.EventHandler(this.DeletePersonButton_Click);
             // 
             // ChoosePersonButton
             // 
@@ -348,6 +333,20 @@ namespace HeroicClicker.View.Controls
             this.CreatePersonButton.Text = "Создать персонажа";
             this.CreatePersonButton.UseVisualStyleBackColor = true;
             this.CreatePersonButton.Click += new System.EventHandler(this.CreatePersonButton_Click);
+            // 
+            // DeletePersonButton
+            // 
+            this.DeletePersonButton.AutoSize = true;
+            this.DeletePersonButton.FlatAppearance.BorderSize = 0;
+            this.DeletePersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeletePersonButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeletePersonButton.Location = new System.Drawing.Point(3, 370);
+            this.DeletePersonButton.Name = "DeletePersonButton";
+            this.DeletePersonButton.Size = new System.Drawing.Size(275, 35);
+            this.DeletePersonButton.TabIndex = 30;
+            this.DeletePersonButton.Text = "Удалить персонажа";
+            this.DeletePersonButton.UseVisualStyleBackColor = true;
+            this.DeletePersonButton.Click += new System.EventHandler(this.DeletePersonButton_Click);
             // 
             // ProfilPersonControl
             // 
