@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroicClicker.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,22 @@ namespace HeroicClicker.View
 {
     public partial class PersonInformationForm : Form
     {
-        public PersonInformationForm()
+        public PersonInformationForm(Person person)
         {
             InitializeComponent();
+            NameBox.Text = person.Name;
+            WorldViewBox.Text = person.WorldView.ToString();
+            LevelBox.Text = person.Level.ToString();
+            ClassBox.Text = person.Class.ToString();
+            BodyBox.Text = person.Body.ToString();
+            MindBox.Text = person.Mind.ToString();
+            SpiritBox.Text = person.Spirit.ToString();
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -83,7 +83,7 @@
     </Compile>
     <Compile Include="View\Interfaces\IAchievementControl.cs" />
     <Compile Include="View\Interfaces\IFightChoiceControl.cs" />
-    <Compile Include="View\Interfaces\IFightcontrol.cs" />
+    <Compile Include="View\Interfaces\IFightControl.cs" />
     <Compile Include="View\Interfaces\IProfilPersonControl.cs" />
     <Compile Include="View\Interfaces\ICreatePersonControl.cs" />
     <Compile Include="View\Interfaces\IMainForm.cs" />

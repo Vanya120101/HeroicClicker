@@ -12,9 +12,9 @@ namespace HeroicClicker.View.Interfaces
     interface IProfilPersonControl : IControl
     {
         string NameOfPerson { get; set; }
-        WorldView? WorldViewOfPerson { get; set; }
+        string WorldViewOfPerson { set; }
         int LevelOfPerson { get; set; }
-        Class? ClassOfPerson { get; set; }
+        string ClassOfPerson { set; }
         int BodyOfPerson { get; set; }
         int MindOfPerson { get; set; }
         int SpiritOfPerson { get; set; }
@@ -24,7 +24,6 @@ namespace HeroicClicker.View.Interfaces
         event Action DeletePerson;
         event Action ChoosePerson;
 
-        void ShowError(string messageError);
 
     }
 }

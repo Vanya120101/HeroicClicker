@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HeroicClicker.View.Controls
 {
-    public partial class FightControl : UserControl, IFightcontrol
+    public partial class FightControl : UserControl, IFightControl
     {
         public FightControl()
         {

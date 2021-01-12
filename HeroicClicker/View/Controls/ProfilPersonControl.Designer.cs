@@ -33,14 +33,8 @@ namespace HeroicClicker.View.Controls
             this.ProfilPersonLabel = new System.Windows.Forms.Label();
             this.LayounPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.PersonProfilPanel = new System.Windows.Forms.Panel();
-            this.ClassBox = new System.Windows.Forms.ComboBox();
             this.WorldviewLabel = new System.Windows.Forms.Label();
-            this.WorldviewBox = new System.Windows.Forms.ComboBox();
-            this.SpiritBox = new System.Windows.Forms.TextBox();
             this.InformationLabel = new System.Windows.Forms.Label();
-            this.MindBox = new System.Windows.Forms.TextBox();
-            this.BodyBox = new System.Windows.Forms.TextBox();
-            this.LvlBox = new System.Windows.Forms.TextBox();
             this.SpiritLabel = new System.Windows.Forms.Label();
             this.MindLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -50,12 +44,18 @@ namespace HeroicClicker.View.Controls
             this.PersonLabel = new System.Windows.Forms.Label();
             this.AvatarLabel = new System.Windows.Forms.Label();
             this.AvatarBox = new System.Windows.Forms.PictureBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ListOfPersons = new System.Windows.Forms.ListBox();
             this.ChoosePersonButton = new System.Windows.Forms.Button();
             this.CreatePersonButton = new System.Windows.Forms.Button();
             this.DeletePersonButton = new System.Windows.Forms.Button();
+            this.NameBox = new System.Windows.Forms.Label();
+            this.SpiritBox = new System.Windows.Forms.Label();
+            this.MindBox = new System.Windows.Forms.Label();
+            this.BodyBox = new System.Windows.Forms.Label();
+            this.ClassBox = new System.Windows.Forms.Label();
+            this.LevelBox = new System.Windows.Forms.Label();
+            this.WorldViewBox = new System.Windows.Forms.Label();
             this.LayounPanel.SuspendLayout();
             this.PersonProfilPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarBox)).BeginInit();
@@ -90,14 +90,15 @@ namespace HeroicClicker.View.Controls
             // PersonProfilPanel
             // 
             this.PersonProfilPanel.BackColor = System.Drawing.Color.White;
+            this.PersonProfilPanel.Controls.Add(this.WorldViewBox);
+            this.PersonProfilPanel.Controls.Add(this.LevelBox);
             this.PersonProfilPanel.Controls.Add(this.ClassBox);
-            this.PersonProfilPanel.Controls.Add(this.WorldviewLabel);
-            this.PersonProfilPanel.Controls.Add(this.WorldviewBox);
-            this.PersonProfilPanel.Controls.Add(this.SpiritBox);
-            this.PersonProfilPanel.Controls.Add(this.InformationLabel);
-            this.PersonProfilPanel.Controls.Add(this.MindBox);
             this.PersonProfilPanel.Controls.Add(this.BodyBox);
-            this.PersonProfilPanel.Controls.Add(this.LvlBox);
+            this.PersonProfilPanel.Controls.Add(this.MindBox);
+            this.PersonProfilPanel.Controls.Add(this.SpiritBox);
+            this.PersonProfilPanel.Controls.Add(this.NameBox);
+            this.PersonProfilPanel.Controls.Add(this.WorldviewLabel);
+            this.PersonProfilPanel.Controls.Add(this.InformationLabel);
             this.PersonProfilPanel.Controls.Add(this.SpiritLabel);
             this.PersonProfilPanel.Controls.Add(this.MindLabel);
             this.PersonProfilPanel.Controls.Add(this.NameLabel);
@@ -107,21 +108,11 @@ namespace HeroicClicker.View.Controls
             this.PersonProfilPanel.Controls.Add(this.PersonLabel);
             this.PersonProfilPanel.Controls.Add(this.AvatarLabel);
             this.PersonProfilPanel.Controls.Add(this.AvatarBox);
-            this.PersonProfilPanel.Controls.Add(this.NameBox);
             this.PersonProfilPanel.Location = new System.Drawing.Point(53, 53);
             this.PersonProfilPanel.Margin = new System.Windows.Forms.Padding(3, 3, 150, 3);
             this.PersonProfilPanel.Name = "PersonProfilPanel";
             this.PersonProfilPanel.Size = new System.Drawing.Size(711, 325);
             this.PersonProfilPanel.TabIndex = 23;
-            // 
-            // ClassBox
-            // 
-            this.ClassBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClassBox.FormattingEnabled = true;
-            this.ClassBox.Location = new System.Drawing.Point(430, 183);
-            this.ClassBox.Name = "ClassBox";
-            this.ClassBox.Size = new System.Drawing.Size(278, 37);
-            this.ClassBox.TabIndex = 21;
             // 
             // WorldviewLabel
             // 
@@ -133,23 +124,6 @@ namespace HeroicClicker.View.Controls
             this.WorldviewLabel.TabIndex = 20;
             this.WorldviewLabel.Text = "Мировоззрение";
             // 
-            // WorldviewBox
-            // 
-            this.WorldviewBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WorldviewBox.FormattingEnabled = true;
-            this.WorldviewBox.Location = new System.Drawing.Point(430, 112);
-            this.WorldviewBox.Name = "WorldviewBox";
-            this.WorldviewBox.Size = new System.Drawing.Size(278, 37);
-            this.WorldviewBox.TabIndex = 8;
-            // 
-            // SpiritBox
-            // 
-            this.SpiritBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SpiritBox.Location = new System.Drawing.Point(430, 288);
-            this.SpiritBox.Name = "SpiritBox";
-            this.SpiritBox.Size = new System.Drawing.Size(278, 34);
-            this.SpiritBox.TabIndex = 19;
-            // 
             // InformationLabel
             // 
             this.InformationLabel.AutoSize = true;
@@ -159,31 +133,6 @@ namespace HeroicClicker.View.Controls
             this.InformationLabel.Size = new System.Drawing.Size(181, 31);
             this.InformationLabel.TabIndex = 18;
             this.InformationLabel.Text = "Информация";
-            // 
-            // MindBox
-            // 
-            this.MindBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MindBox.Location = new System.Drawing.Point(430, 254);
-            this.MindBox.Name = "MindBox";
-            this.MindBox.Size = new System.Drawing.Size(278, 34);
-            this.MindBox.TabIndex = 17;
-            // 
-            // BodyBox
-            // 
-            this.BodyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BodyBox.Location = new System.Drawing.Point(430, 220);
-            this.BodyBox.MaxLength = 2;
-            this.BodyBox.Name = "BodyBox";
-            this.BodyBox.Size = new System.Drawing.Size(278, 34);
-            this.BodyBox.TabIndex = 16;
-            // 
-            // LvlBox
-            // 
-            this.LvlBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LvlBox.Location = new System.Drawing.Point(430, 149);
-            this.LvlBox.Name = "LvlBox";
-            this.LvlBox.Size = new System.Drawing.Size(278, 34);
-            this.LvlBox.TabIndex = 14;
             // 
             // SpiritLabel
             // 
@@ -274,15 +223,6 @@ namespace HeroicClicker.View.Controls
             this.AvatarBox.TabIndex = 3;
             this.AvatarBox.TabStop = false;
             // 
-            // NameBox
-            // 
-            this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameBox.Location = new System.Drawing.Point(430, 78);
-            this.NameBox.MaxLength = 15;
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(278, 34);
-            this.NameBox.TabIndex = 4;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.ListOfPersons);
@@ -348,6 +288,69 @@ namespace HeroicClicker.View.Controls
             this.DeletePersonButton.UseVisualStyleBackColor = true;
             this.DeletePersonButton.Click += new System.EventHandler(this.DeletePersonButton_Click);
             // 
+            // NameBox
+            // 
+            this.NameBox.AutoSize = true;
+            this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameBox.Location = new System.Drawing.Point(531, 78);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(0, 29);
+            this.NameBox.TabIndex = 21;
+            // 
+            // SpiritBox
+            // 
+            this.SpiritBox.AutoSize = true;
+            this.SpiritBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SpiritBox.Location = new System.Drawing.Point(531, 288);
+            this.SpiritBox.Name = "SpiritBox";
+            this.SpiritBox.Size = new System.Drawing.Size(0, 29);
+            this.SpiritBox.TabIndex = 22;
+            // 
+            // MindBox
+            // 
+            this.MindBox.AutoSize = true;
+            this.MindBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MindBox.Location = new System.Drawing.Point(531, 254);
+            this.MindBox.Name = "MindBox";
+            this.MindBox.Size = new System.Drawing.Size(0, 29);
+            this.MindBox.TabIndex = 24;
+            // 
+            // BodyBox
+            // 
+            this.BodyBox.AutoSize = true;
+            this.BodyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BodyBox.Location = new System.Drawing.Point(531, 220);
+            this.BodyBox.Name = "BodyBox";
+            this.BodyBox.Size = new System.Drawing.Size(0, 29);
+            this.BodyBox.TabIndex = 25;
+            // 
+            // ClassBox
+            // 
+            this.ClassBox.AutoSize = true;
+            this.ClassBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClassBox.Location = new System.Drawing.Point(531, 183);
+            this.ClassBox.Name = "ClassBox";
+            this.ClassBox.Size = new System.Drawing.Size(0, 29);
+            this.ClassBox.TabIndex = 26;
+            // 
+            // LevelBox
+            // 
+            this.LevelBox.AutoSize = true;
+            this.LevelBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LevelBox.Location = new System.Drawing.Point(531, 149);
+            this.LevelBox.Name = "LevelBox";
+            this.LevelBox.Size = new System.Drawing.Size(0, 29);
+            this.LevelBox.TabIndex = 27;
+            // 
+            // WorldViewBox
+            // 
+            this.WorldViewBox.AutoSize = true;
+            this.WorldViewBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorldViewBox.Location = new System.Drawing.Point(531, 112);
+            this.WorldViewBox.Name = "WorldViewBox";
+            this.WorldViewBox.Size = new System.Drawing.Size(0, 29);
+            this.WorldViewBox.TabIndex = 28;
+            // 
             // ProfilPersonControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -374,14 +377,8 @@ namespace HeroicClicker.View.Controls
         private System.Windows.Forms.Label ProfilPersonLabel;
         private System.Windows.Forms.FlowLayoutPanel LayounPanel;
         private System.Windows.Forms.Panel PersonProfilPanel;
-        private System.Windows.Forms.ComboBox ClassBox;
         private System.Windows.Forms.Label WorldviewLabel;
-        private System.Windows.Forms.ComboBox WorldviewBox;
-        private System.Windows.Forms.TextBox SpiritBox;
         private System.Windows.Forms.Label InformationLabel;
-        private System.Windows.Forms.TextBox MindBox;
-        private System.Windows.Forms.TextBox BodyBox;
-        private System.Windows.Forms.TextBox LvlBox;
         private System.Windows.Forms.Label SpiritLabel;
         private System.Windows.Forms.Label MindLabel;
         private System.Windows.Forms.Label NameLabel;
@@ -391,11 +388,17 @@ namespace HeroicClicker.View.Controls
         private System.Windows.Forms.Label PersonLabel;
         private System.Windows.Forms.Label AvatarLabel;
         private System.Windows.Forms.PictureBox AvatarBox;
-        private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.ListBox ListOfPersons;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button ChoosePersonButton;
         private System.Windows.Forms.Button CreatePersonButton;
         private System.Windows.Forms.Button DeletePersonButton;
+        private System.Windows.Forms.Label WorldViewBox;
+        private System.Windows.Forms.Label LevelBox;
+        private System.Windows.Forms.Label ClassBox;
+        private System.Windows.Forms.Label BodyBox;
+        private System.Windows.Forms.Label MindBox;
+        private System.Windows.Forms.Label SpiritBox;
+        private System.Windows.Forms.Label NameBox;
     }
 }

@@ -168,9 +168,9 @@ namespace HeroicClicker.Presenter
             }
 
             ProfilPersonControl.NameOfPerson = CurrentPerson.Name;
-            ProfilPersonControl.WorldViewOfPerson = CurrentPerson.WorldView;
+            ProfilPersonControl.WorldViewOfPerson = CurrentPerson.WorldView.ToString();
             ProfilPersonControl.LevelOfPerson = CurrentPerson.Level;
-            ProfilPersonControl.ClassOfPerson = CurrentPerson.Class;
+            ProfilPersonControl.ClassOfPerson = CurrentPerson.Class.ToString();
             ProfilPersonControl.BodyOfPerson = CurrentPerson.Body;
             ProfilPersonControl.MindOfPerson = CurrentPerson.Mind;
             ProfilPersonControl.SpiritOfPerson = CurrentPerson.Spirit;

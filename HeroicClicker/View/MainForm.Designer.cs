@@ -219,10 +219,10 @@ namespace HeroicClicker
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.CancelButton.FlatAppearance.BorderSize = 0;
             this.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.CancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
@@ -232,7 +232,7 @@ namespace HeroicClicker
             this.CancelButton.Location = new System.Drawing.Point(1003, 0);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 100);
-            this.CancelButton.TabIndex = 1;
+            this.CancelButton.TabIndex = 3;
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -276,15 +276,16 @@ namespace HeroicClicker
             // 
             this.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuButton.FlatAppearance.BorderSize = 0;
             this.MenuButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.MenuButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuButton.ImageKey = "Menu.png";
             this.MenuButton.ImageList = this.MenuImages;
-            this.MenuButton.Location = new System.Drawing.Point(38, 15);
+            this.MenuButton.Location = new System.Drawing.Point(0, 0);
             this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(60, 60);
+            this.MenuButton.Size = new System.Drawing.Size(200, 100);
             this.MenuButton.TabIndex = 0;
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);

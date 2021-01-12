@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HeroicClicker.View.Interfaces
 {
-    interface IFightcontrol : IControl
+    interface IFightControl : IControl
     {
     }
 }

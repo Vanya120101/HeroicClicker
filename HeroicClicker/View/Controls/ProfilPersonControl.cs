@@ -23,30 +23,19 @@ namespace HeroicClicker.View.Controls
             {
                 if (value == null)
                 {
-                    NameBox.Clear();
+                    NameBox.Text = null;
                     return;
                 }
                 NameBox.Text = value;
             }
         }
 
-        public WorldView? WorldViewOfPerson
+        public string WorldViewOfPerson
         {
-            get
-            {
-                if (WorldviewBox.SelectedItem == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return (WorldView)WorldviewBox.SelectedItem;
-
-                }
-            }
+            
             set
             {
-                WorldviewBox.SelectedItem = value;
+                WorldViewBox.Text = value;
             }
         }
 
@@ -55,7 +44,7 @@ namespace HeroicClicker.View.Controls
             get
             {
                 int result;
-                if (Int32.TryParse(LvlBox.Text, out result))
+                if (Int32.TryParse(LevelBox.Text, out result))
                 {
                     return result;
 
@@ -67,31 +56,15 @@ namespace HeroicClicker.View.Controls
             }
             set
             {
-                if (value < 0)
-                {
-                    LvlBox.Clear();
-                    return;
-
-                }
-                LvlBox.Text = value.ToString();
+                
+                LevelBox.Text = value.ToString();
             }
         }
 
-        public Class? ClassOfPerson
+        public string ClassOfPerson
         {
-            get
-            {
-                if (ClassBox.SelectedItem == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return (Class)ClassBox.SelectedItem;
-
-                }
-            }
-            set { ClassBox.SelectedItem = value; }
+            
+            set { ClassBox.Text = value; }
         }
         public int BodyOfPerson
         {
@@ -112,7 +85,7 @@ namespace HeroicClicker.View.Controls
             {
                 if (value < 0)
                 {
-                    BodyBox.Clear();
+                    BodyBox.Text = null;
                     return;
                 }
                 BodyBox.Text = value.ToString();
@@ -137,7 +110,7 @@ namespace HeroicClicker.View.Controls
             {
                 if (value < 0)
                 {
-                    MindBox.Clear();
+                    MindBox.Text = null;
                     return;
                 }
                 MindBox.Text = value.ToString();
@@ -162,7 +135,7 @@ namespace HeroicClicker.View.Controls
             {
                 if (value < 0)
                 {
-                    SpiritBox.Clear();
+                    SpiritBox.Text = null;
                     return;
                 }
                 SpiritBox.Text = value.ToString();
@@ -194,10 +167,7 @@ namespace HeroicClicker.View.Controls
         public ProfilPersonControl()
         {
             InitializeComponent();
-            ClassBox.DataSource = Enum.GetValues(typeof(Class));
-            ClassBox.SelectedItem = null;
-            WorldviewBox.DataSource = Enum.GetValues(typeof(WorldView));
-            WorldviewBox.SelectedItem = null;
+           
 
         }
 

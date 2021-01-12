@@ -17,7 +17,7 @@ namespace HeroicClicker.Presenter
         IProfilPersonControl ProfilPersonControl;
         IStoryControl StoryControl;
         IFightChoiceControl FightChoiceControl;
-        IFightcontrol FightControl;
+        IFightControl FightControl;
         IAchievementControl AchievementControl;
 
         PersonPresenter PersonPresenter;
@@ -36,7 +36,7 @@ namespace HeroicClicker.Presenter
 
             PersonButtonClick(this, null);
 
-            FightPresenter = new FightPresenter(FightChoiceControl);
+            FightPresenter = new FightPresenter(FightChoiceControl, FightControl);
             
         }
 
@@ -75,9 +75,10 @@ namespace HeroicClicker.Presenter
             CreatePersonControl = new CreatePersonControl();
             ProfilPersonControl = new ProfilPersonControl();
             StoryControl = new StoryControl();
-            FightControl = new FightControl();
             AchievementControl = new AchievementControl();
             FightChoiceControl = new FightChoiceControl();
+            FightControl = new FightControl();
+
 
             AdjustControls(CreatePersonControl,ProfilPersonControl, StoryControl, FightChoiceControl, FightControl, AchievementControl);
         }

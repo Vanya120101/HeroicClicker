@@ -1,4 +1,5 @@
 ﻿using HeroicClicker.Model;
+using HeroicClicker.View;
 using HeroicClicker.View.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,9 @@ namespace HeroicClicker.Presenter
     class FightPresenter
     {
         IFightChoiceControl FightChoiceControl;
+        IFightControl FightControl;
         BindingList<Person> Enemies;
-        public FightPresenter(IFightChoiceControl fightChoiceControl)
+        public FightPresenter(IFightChoiceControl fightChoiceControl, IFightControl fightControl)
         {
             FightChoiceControl = fightChoiceControl;
             Enemies = BasePresenter.Load("Enemies");
@@ -23,7 +25,7 @@ namespace HeroicClicker.Presenter
             FightChoiceControl.InformationButtonClick += InformationButtonClick;
             FightChoiceControl.ChangeButtonClick += ChangeButtonClick;
 
-
+            FightControl = fightControl;
         }
 
         private void FightButtonClick()
@@ -31,7 +33,9 @@ namespace HeroicClicker.Presenter
             if (FightChoiceControl.SelectedEnemy == null)
             {
                 FightChoiceControl.ShowError("Противник не выбран");
+                return;
             }
+            FightControl.BringToFront();
             //Вызвать на бой выбранного персонажа
         }
         private void InformationButtonClick()
@@ -39,7 +43,11 @@ namespace HeroicClicker.Presenter
             if (FightChoiceControl.SelectedEnemy == null)
             {
                 FightChoiceControl.ShowError("Персонаж не выбран");
+                return;
             }
+
+            PersonInformationForm personInformationForm = new PersonInformationForm(FightChoiceControl.SelectedEnemy);
+            personInformationForm.Show();
             //Вывести информацию о противнике
         }
         private void ChangeButtonClick()
