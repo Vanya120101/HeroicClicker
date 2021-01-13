@@ -1,4 +1,5 @@
-﻿using HeroicClicker.View.Controls;
+﻿using HeroicClicker.Model;
+using HeroicClicker.View.Controls;
 using HeroicClicker.View.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,11 @@ namespace HeroicClicker.Presenter
 
         PersonPresenter PersonPresenter;
         FightPresenter FightPresenter;
+
+        public Person CurrentPerson
+        {
+            get { return PersonPresenter.CurrentPerson; }
+        }
         public MainPresenter(IMainForm mainForm)
         {
             MainForm = mainForm;
@@ -36,23 +42,38 @@ namespace HeroicClicker.Presenter
 
             PersonButtonClick(this, null);
 
-            FightPresenter = new FightPresenter(FightChoiceControl, FightControl);
+            FightPresenter = new FightPresenter(this, FightChoiceControl, FightControl);
             
         }
 
         private void AchievementButtonClick(object sender, EventArgs e)
         {
+            if (CurrentPerson == null)
+            {
+                MainForm.ShowError("Персонаж не выбран");
+                return;
+            }
             AchievementControl.BringToFront();
         }
 
         private void FightButtonClick(object sender, EventArgs e)
         {
+            if (CurrentPerson == null)
+            {
+                MainForm.ShowError("Персонаж не выбран");
+                return;
+            }
             FightChoiceControl.BringToFront();
         }
 
 
         private void StoryButtonClick(object sender, EventArgs e)
         {
+            if (CurrentPerson == null)
+            {
+                MainForm.ShowError("Персонаж не выбран");
+                return;
+            }
             StoryControl.BringToFront();
         }
         private void PersonButtonClick(object sender, EventArgs e)

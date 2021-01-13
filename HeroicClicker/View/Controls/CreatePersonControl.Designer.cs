@@ -265,8 +265,10 @@ namespace HeroicClicker.View.Controls
             this.LvlBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LvlBox.Location = new System.Drawing.Point(430, 149);
             this.LvlBox.Name = "LvlBox";
+            this.LvlBox.ReadOnly = true;
             this.LvlBox.Size = new System.Drawing.Size(287, 34);
             this.LvlBox.TabIndex = 14;
+            this.LvlBox.Text = "1";
             // 
             // SpiritLabel
             // 

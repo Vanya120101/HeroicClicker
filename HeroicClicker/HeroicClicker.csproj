@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Fight.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\FightPresenter.cs" />

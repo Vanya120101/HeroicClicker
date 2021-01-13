@@ -30,6 +30,15 @@ namespace HeroicClicker.View.Controls
         public FightChoiceControl()
         {
             InitializeComponent();
+            Binding bindingSizeToSize = new Binding("Size", this.LayoutPanel, "Size");
+            bindingSizeToSize.Format += BindingSizeToSize_Format;
+            this.ListOfEnemies.DataBindings.Add(bindingSizeToSize);
+            
+        }
+
+        private void BindingSizeToSize_Format(object sender, ConvertEventArgs e)
+        {
+            e.Value = new Size(LayoutPanel.Size.Width - 150, this.LayoutPanel.Size.Height / 2);
         }
 
         private void FightButton_Click(object sender, EventArgs e)

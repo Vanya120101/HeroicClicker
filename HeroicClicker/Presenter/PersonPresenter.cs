@@ -12,7 +12,8 @@ namespace HeroicClicker.Presenter
     class PersonPresenter
     {
 
-        Person CurrentPerson;
+        public Person CurrentPerson { get; set; }
+
         BindingList<Person> Persons;
         public int CountOfPersons
         {
@@ -67,19 +68,24 @@ namespace HeroicClicker.Presenter
                 log.Append("Класс персонажа не может пустым");
                 log.AppendLine();
             }
-            if (CreatePersonControl.BodyOfPerson<=0)
+            if (CreatePersonControl.SpiritOfPerson<=4)
             {
-                log.Append("Тело персонажа не может быть равным нулю или меньше");
+                log.Append("Дух персонажа не может быть меньше 5");
                 log.AppendLine();
             }
-            if (CreatePersonControl.MindOfPerson <= 0)
+            if (CreatePersonControl.MindOfPerson <=4)
             {
-                log.Append("Разум персонажа не может быть равным нулю или меньше");
+                log.Append("Разум персонажа не может быть меньше 5");
                 log.AppendLine();
             }
-            if (CreatePersonControl.SpiritOfPerson <= 0)
+            if (CreatePersonControl.BodyOfPerson <=4)
             {
-                log.Append("Дух персонажа не может быть равным нулю или меньше");
+                log.Append("Тело персонажа не может быть меньше 5");
+                log.AppendLine();
+            }
+            if (CreatePersonControl.BodyOfPerson + CreatePersonControl.MindOfPerson + CreatePersonControl.SpiritOfPerson > 20)
+            {
+                log.Append("Сумма параметров персонажа не может превышать 20");
                 log.AppendLine();
             }
             if (log.Length>0)
@@ -87,6 +93,7 @@ namespace HeroicClicker.Presenter
                 CreatePersonControl.ShowError(log.ToString());
                 return;
             }
+            
 
             Person person = new Person(CreatePersonControl.NameOfPerson, CreatePersonControl.WorldViewOfPerson, CreatePersonControl.LevelOfPerson,
                                         CreatePersonControl.ClassOfPerson, CreatePersonControl.BodyOfPerson, CreatePersonControl.MindOfPerson,
@@ -139,7 +146,7 @@ namespace HeroicClicker.Presenter
             }
             CreatePersonControl.NameOfPerson = name;
             int result = 0;
-            while (result < 20)
+            while (result != 20)
             {
                 CreatePersonControl.BodyOfPerson = random.Next(5,11);
                 CreatePersonControl.MindOfPerson = random.Next(5, 11);
@@ -185,6 +192,7 @@ namespace HeroicClicker.Presenter
             if (ProfilPersonControl.SelectedPerson == CurrentPerson)
             {
                 ClearFilesProfilPersonControl();
+                CurrentPerson = null;
             }
             // ProfilPersonControl.Persons.Remove(ProfilPersonControl.SelectedPerson);
             Persons.Remove(ProfilPersonControl.SelectedPerson);

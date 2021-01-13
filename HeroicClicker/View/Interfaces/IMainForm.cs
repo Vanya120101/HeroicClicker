@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace HeroicClicker.View.Interfaces
 {
-    interface IMainForm
+    interface IMainForm : IControl
     {
 
         Control.ControlCollection ControlsOfContentPanel { get;}
+
+        
 
         event ButtonEvent PersonButtonClick;
         event ButtonEvent StoryButtonClick;

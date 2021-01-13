@@ -56,7 +56,11 @@ namespace HeroicClicker.View.Controls
             }
             set
             {
-                
+                if (value < 0)
+                {
+                    LevelBox.Text = null;
+                    return;
+                }
                 LevelBox.Text = value.ToString();
             }
         }

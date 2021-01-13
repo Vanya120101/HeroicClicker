@@ -282,6 +282,11 @@ namespace HeroicClicker
             ClickButton(sender);
         }
 
+        public void ShowError(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
+
 
     }
 }

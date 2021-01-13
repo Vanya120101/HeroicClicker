@@ -246,7 +246,7 @@ namespace HeroicClicker
             this.ResizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.ResizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
             this.ResizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResizeButton.ImageKey = "Expand.png";
+            this.ResizeButton.ImageKey = "Compress.png";
             this.ResizeButton.ImageList = this.MenuImages;
             this.ResizeButton.Location = new System.Drawing.Point(897, 3);
             this.ResizeButton.Name = "ResizeButton";
@@ -320,6 +320,7 @@ namespace HeroicClicker
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.LeftMenu.ResumeLayout(false);
             this.LeftMenu.PerformLayout();
             this.TopMenu.ResumeLayout(false);

@@ -125,14 +125,14 @@ namespace HeroicClicker.View.Controls
             // 
             // ListOfEnemies
             // 
-            this.ListOfEnemies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ListOfEnemies.BackColor = System.Drawing.Color.White;
+            this.ListOfEnemies.Dock = System.Windows.Forms.DockStyle.Left;
             this.ListOfEnemies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListOfEnemies.FormattingEnabled = true;
             this.ListOfEnemies.ItemHeight = 31;
             this.ListOfEnemies.Location = new System.Drawing.Point(100, 342);
             this.ListOfEnemies.Margin = new System.Windows.Forms.Padding(100, 0, 50, 100);
+            this.ListOfEnemies.MinimumSize = new System.Drawing.Size(505, 345);
             this.ListOfEnemies.Name = "ListOfEnemies";
             this.ListOfEnemies.Size = new System.Drawing.Size(505, 345);
             this.ListOfEnemies.TabIndex = 1;
