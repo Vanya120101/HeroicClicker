@@ -22,7 +22,6 @@ namespace HeroicClicker.Presenter
         StringBuilder logFirst;
         StringBuilder logSecond;
 
-        int count = 0;
 
         bool isQuery = true;
         Person FirstFighter
@@ -47,7 +46,7 @@ namespace HeroicClicker.Presenter
             FightChoiceControl.ChangeButtonClick += ChangeButtonClick;
 
             FightControl = fightControl;
-            FightControl.FigthButtonClick += FigthButtonClick;
+            FightControl.FigthButtonClick += FightButtonClickHit;
 
             log = new StringBuilder();
             logFirst = new StringBuilder();
@@ -105,7 +104,7 @@ namespace HeroicClicker.Presenter
             //Поменять список противников
         }
 
-        private void FigthButtonClick()
+        private void FightButtonClickHit()
         {
             if (FightControl.FightButtonText == "Старт")
             { 

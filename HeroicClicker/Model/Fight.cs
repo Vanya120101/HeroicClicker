@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroicClicker.View.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,39 @@ namespace HeroicClicker.Model
     {
         Person FirstFighter;
         Person SecondFighter;
+        IFightControl FightControl;
+        IFightChoiceControl FightChoiceControl;
 
-        public Fight(Person firstFighter, Person secondFighter)
+        StringBuilder log;
+        StringBuilder logFirst;
+        StringBuilder logSecond;
+        bool isQuery = true;
+
+        public Fight(IFightControl fightControl, IFightChoiceControl fightChoiceControl, Person firstFighter, Person secondFighter)
         {
+            FightControl = fightControl;
             FirstFighter = firstFighter;
             SecondFighter = secondFighter;
+
+            StartFight();
         }
 
-        public void StartFight(ref StringBuilder log)
+        public void StartFight()
         {
-            log.AppendFormat("Битва между {0} и {1} началась", FirstFighter.Name, SecondFighter.Name);
+            FightControl.NameOfFirstFigther = FirstFighter.Name;
+            FightControl.NameOfSecondFighter = SecondFighter.Name;
+
+            FightControl.FirstFighterMaxHealth = FirstFighter.Body * 2;
+            FightControl.SecondFighterMaxHealth = SecondFighter.Body * 2;
+
+            FightControl.HealthOfFirstFighter = FightControl.FirstFighterMaxHealth;
+            FightControl.HealthOfSecondFighter = FightControl.SecondFighterMaxHealth;
+
+            FightControl.Log = log.ToString();
+            FightControl.LogFirstFigher = logFirst.ToString();
+            FightControl.LogSecondFigher = logSecond.ToString();
+
+            FightControl.FightButtonText = "Старт";
         }
 
         public Person FightContinue(ref StringBuilder log)
@@ -27,5 +51,7 @@ namespace HeroicClicker.Model
             log.Append($"{FirstFighter.Name} наносит противнику 10 урона");
             return null;
         }
+
+     
     }
 }
