@@ -34,7 +34,7 @@ namespace HeroicClicker.View.Controls
             this.LayoutButton = new System.Windows.Forms.FlowLayoutPanel();
             this.StartStoryButton = new System.Windows.Forms.Button();
             this.ContinueStoryButton = new System.Windows.Forms.Button();
-            this.ListOfEnemies = new System.Windows.Forms.ListBox();
+            this.ListOfStory = new System.Windows.Forms.ListBox();
             this.LayoutPanel.SuspendLayout();
             this.LayoutButton.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@ namespace HeroicClicker.View.Controls
             this.LayoutPanel.AutoScroll = true;
             this.LayoutPanel.BackColor = System.Drawing.Color.White;
             this.LayoutPanel.Controls.Add(this.LayoutButton);
-            this.LayoutPanel.Controls.Add(this.ListOfEnemies);
+            this.LayoutPanel.Controls.Add(this.ListOfStory);
             this.LayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.LayoutPanel.Location = new System.Drawing.Point(0, 39);
@@ -91,6 +91,7 @@ namespace HeroicClicker.View.Controls
             this.StartStoryButton.TabIndex = 0;
             this.StartStoryButton.Text = "Начать";
             this.StartStoryButton.UseVisualStyleBackColor = true;
+            this.StartStoryButton.Click += new System.EventHandler(this.StartStoryButton_Click);
             // 
             // ContinueStoryButton
             // 
@@ -106,20 +107,21 @@ namespace HeroicClicker.View.Controls
             this.ContinueStoryButton.TabIndex = 2;
             this.ContinueStoryButton.Text = "Продолжить";
             this.ContinueStoryButton.UseVisualStyleBackColor = true;
+            this.ContinueStoryButton.Click += new System.EventHandler(this.ContinueStoryButton_Click);
             // 
-            // ListOfEnemies
+            // ListOfStory
             // 
-            this.ListOfEnemies.BackColor = System.Drawing.Color.White;
-            this.ListOfEnemies.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ListOfEnemies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListOfEnemies.FormattingEnabled = true;
-            this.ListOfEnemies.ItemHeight = 31;
-            this.ListOfEnemies.Location = new System.Drawing.Point(100, 236);
-            this.ListOfEnemies.Margin = new System.Windows.Forms.Padding(100, 0, 50, 100);
-            this.ListOfEnemies.MinimumSize = new System.Drawing.Size(505, 345);
-            this.ListOfEnemies.Name = "ListOfEnemies";
-            this.ListOfEnemies.Size = new System.Drawing.Size(505, 345);
-            this.ListOfEnemies.TabIndex = 2;
+            this.ListOfStory.BackColor = System.Drawing.Color.White;
+            this.ListOfStory.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ListOfStory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListOfStory.FormattingEnabled = true;
+            this.ListOfStory.ItemHeight = 31;
+            this.ListOfStory.Location = new System.Drawing.Point(100, 236);
+            this.ListOfStory.Margin = new System.Windows.Forms.Padding(100, 0, 50, 100);
+            this.ListOfStory.MinimumSize = new System.Drawing.Size(505, 345);
+            this.ListOfStory.Name = "ListOfStory";
+            this.ListOfStory.Size = new System.Drawing.Size(505, 345);
+            this.ListOfStory.TabIndex = 2;
             // 
             // StoryControl
             // 
@@ -145,6 +147,6 @@ namespace HeroicClicker.View.Controls
         private System.Windows.Forms.FlowLayoutPanel LayoutButton;
         private System.Windows.Forms.Button StartStoryButton;
         private System.Windows.Forms.Button ContinueStoryButton;
-        private System.Windows.Forms.ListBox ListOfEnemies;
+        private System.Windows.Forms.ListBox ListOfStory;
     }
 }
