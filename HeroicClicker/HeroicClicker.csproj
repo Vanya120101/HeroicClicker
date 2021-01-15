@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Presenter\AchievementPresenter.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\BattlePresenter.cs" />
     <Compile Include="Presenter\FightPresenter.cs" />

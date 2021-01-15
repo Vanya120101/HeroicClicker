@@ -24,8 +24,11 @@ namespace HeroicClicker.Presenter
         bool isQuery = true;
         bool IsEnd = false;
         bool isVictory = false;
+        bool IsStory = false;
 
         public event Action DoNextStepStory;
+        public event Action Save;
+        public event AddAchievement AddAchievement;
 
 
         public BattlePresenter(IFightControl fightControl)
@@ -42,8 +45,10 @@ namespace HeroicClicker.Presenter
 
 
 
-        public void StartFight(Person firstFighter, Person secondFighter, IControl control)
+        public void StartFight(Person firstFighter, Person secondFighter, IControl control, bool isStory = false)
         {
+            IsStory = isStory;
+
             Control = control;
 
             FightControl.BringToFront();
@@ -83,7 +88,7 @@ namespace HeroicClicker.Presenter
             }
             if (IsEnd)
             {
-                if (DoNextStepStory != null && isVictory)
+                if (DoNextStepStory != null && isVictory && IsStory)
                 {
                     DoNextStepStory.Invoke();
                     return;
@@ -117,13 +122,17 @@ namespace HeroicClicker.Presenter
             {
                 Log.Append("ВЫ ВЫИГРАЛИ");
                 isVictory = true;
+                AddAchievement.Invoke(FirstFighter,SecondFighter.Name);
+                FirstFighter.GiveExperience(5);
             }
             else
             {
                 Log.Append("ВЫ ПРОИГРАЛИ");
                 isVictory = false;
+                AddAchievement.Invoke(SecondFighter,FirstFighter.Name);
+                SecondFighter.GiveExperience(5);
             }
-
+            Save.Invoke();
             FightControl.Log = Log.ToString();
             FightControl.FightButtonText = "Финиш";
             IsEnd = true;

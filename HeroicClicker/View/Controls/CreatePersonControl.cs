@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace HeroicClicker.View.Controls
 {
-
     public partial class CreatePersonControl : UserControl, ICreatePersonControl
     {
         #region Свойства

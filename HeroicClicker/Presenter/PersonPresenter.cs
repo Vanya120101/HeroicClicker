@@ -42,6 +42,11 @@ namespace HeroicClicker.Presenter
 
         private void Persons_ListChanged(object sender, ListChangedEventArgs e)
         {
+            Save();
+        }
+
+        public void Save()
+        {
             BasePresenter.Save(Persons, "Persons");
         }
 
@@ -58,7 +63,7 @@ namespace HeroicClicker.Presenter
                 log.Append("Мировоззрение персонажа не может пустым");
                 log.AppendLine();
             }
-            if (CreatePersonControl.LevelOfPerson <=0)
+            if (CreatePersonControl.LevelOfPerson <= 0)
             {
                 log.Append("Уровень персонажа не может быть равным нулю или меньше");
                 log.AppendLine();
@@ -68,17 +73,17 @@ namespace HeroicClicker.Presenter
                 log.Append("Класс персонажа не может пустым");
                 log.AppendLine();
             }
-            if (CreatePersonControl.SpiritOfPerson<=4)
+            if (CreatePersonControl.SpiritOfPerson <= 4)
             {
                 log.Append("Дух персонажа не может быть меньше 5");
                 log.AppendLine();
             }
-            if (CreatePersonControl.MindOfPerson <=4)
+            if (CreatePersonControl.MindOfPerson <= 4)
             {
                 log.Append("Разум персонажа не может быть меньше 5");
                 log.AppendLine();
             }
-            if (CreatePersonControl.BodyOfPerson <=4)
+            if (CreatePersonControl.BodyOfPerson <= 4)
             {
                 log.Append("Тело персонажа не может быть меньше 5");
                 log.AppendLine();
@@ -88,26 +93,25 @@ namespace HeroicClicker.Presenter
                 log.Append("Сумма параметров персонажа не может превышать 20");
                 log.AppendLine();
             }
-            if (log.Length>0)
+            if (log.Length > 0)
             {
                 CreatePersonControl.ShowError(log.ToString());
                 return;
             }
-            
+
 
             Person person = new Person(CreatePersonControl.NameOfPerson, CreatePersonControl.WorldViewOfPerson, CreatePersonControl.LevelOfPerson,
                                         CreatePersonControl.ClassOfPerson, CreatePersonControl.BodyOfPerson, CreatePersonControl.MindOfPerson,
                                         CreatePersonControl.SpiritOfPerson);
-
             CurrentPerson = person;
-            //ProfilPersonControl.Persons.Add(CurrentPerson);
+
             Persons.Add(CurrentPerson);
 
             ClearFilesCreatePersonControl();
             SetCharacteristic();
 
             ProfilPersonControl.BringToFront();
-            
+
 
         }
 
@@ -120,7 +124,7 @@ namespace HeroicClicker.Presenter
             CreatePersonControl.WorldViewOfPerson = (WorldView)random.Next(1, 4);
 
             string name;
-            switch (random.Next(1,7))
+            switch (random.Next(1, 7))
             {
                 case 1:
                     name = "Алиса";
@@ -148,7 +152,7 @@ namespace HeroicClicker.Presenter
             int result = 0;
             while (result != 20)
             {
-                CreatePersonControl.BodyOfPerson = random.Next(5,11);
+                CreatePersonControl.BodyOfPerson = random.Next(5, 11);
                 CreatePersonControl.MindOfPerson = random.Next(5, 11);
                 CreatePersonControl.SpiritOfPerson = random.Next(5, 11);
                 result = CreatePersonControl.BodyOfPerson + CreatePersonControl.MindOfPerson + CreatePersonControl.SpiritOfPerson;
@@ -201,7 +205,7 @@ namespace HeroicClicker.Presenter
             //    ProfilPersonControl.SelectedPerson = ProfilPersonControl.Persons[0];
 
             //}
-            if (Persons.Count>0)
+            if (Persons.Count > 0)
             {
                 ProfilPersonControl.SelectedPerson = Persons[0];
             }
@@ -223,7 +227,6 @@ namespace HeroicClicker.Presenter
         {
             CreatePersonControl.NameOfPerson = null;
             CreatePersonControl.WorldViewOfPerson = null;
-            CreatePersonControl.LevelOfPerson = -1;
             CreatePersonControl.ClassOfPerson = null;
             CreatePersonControl.BodyOfPerson = -1;
             CreatePersonControl.MindOfPerson = -1;
@@ -239,6 +242,57 @@ namespace HeroicClicker.Presenter
             ProfilPersonControl.BodyOfPerson = -1;
             ProfilPersonControl.MindOfPerson = -1;
             ProfilPersonControl.SpiritOfPerson = -1;
+        }
+
+        public void AddAchievement(Person person, string achievementPart, bool isStory = false)
+        {
+            bool consist = false;
+            string achievementString;
+            if (isStory)
+            {
+                achievementString = string.Format("{0} покорил {1} историю", person.Name, achievementPart);
+
+                foreach (string achievement in person.Achievements)
+                {
+                    if (achievement == achievementString)
+                    {
+                        consist = true;
+                    }
+                }
+
+                if (!consist)
+                {
+                    person.Achievements.Add(achievementString);
+                }
+
+            }
+            else
+            {
+                achievementString = string.Format("Покоритель {0}", achievementPart);
+
+                foreach (string achievement in person.Achievements)
+                {
+                    if (achievement == achievementString)
+                    {
+                        consist = true;
+                    }
+                }
+
+
+                if (!consist)
+                {
+                    person.Achievements.Add(achievementString);
+                }
+            }
+
+            
+            Save();
+
+        }
+
+        private void FindAchievement()
+        {
+
         }
     }
 }

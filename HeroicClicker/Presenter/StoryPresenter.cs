@@ -18,6 +18,8 @@ namespace HeroicClicker.Presenter
 
         BindingList<Person> Enemies;
 
+        public event AddAchievement AddAchievement;
+
         int step = 0;
         int count = 0;
 
@@ -38,9 +40,7 @@ namespace HeroicClicker.Presenter
 
         }
 
-        private void BattlePresenter_DoNextStepStory()
-        {
-        }
+   
 
         private void BattlePresenter_DoNextStep()
         {
@@ -61,15 +61,18 @@ namespace HeroicClicker.Presenter
             if (StoryControl.SelectedStory == "Легкая")
             {
                 step = 5;
+                Enemies = BasePresenter.Load("EnemiesOfFirstStory");
             }
             if (StoryControl.SelectedStory == "Средняя")
             {
                 step = 10;
+                Enemies = BasePresenter.Load("EnemiesOfSecondStory");
 
             }
             if (StoryControl.SelectedStory == "Сложная")
             {
                 step = 15;
+                Enemies = BasePresenter.Load("EnemiesOfThirdStory");
 
             }
             count = 0;
@@ -77,14 +80,16 @@ namespace HeroicClicker.Presenter
         }
         private void BeginStartStory()
         {
-            if (count<step)
+            if (count < step)
             {
-                BattlePresenter.StartFight(MainPresenter.CurrentPerson, Enemies[count], StoryControl);
+                BattlePresenter.StartFight(MainPresenter.CurrentPerson, Enemies[count], StoryControl, true);
                 count++;
             }
             else
             {
-                FightControl.ShowError("История пройдена");
+                FightControl.ShowError(string.Format("История {0} пройдена", StoryControl.SelectedStory));
+                MainPresenter.CurrentPerson.Achievements.Add(string.Format("{0} история покорена", StoryControl.SelectedStory));
+                AddAchievement(MainPresenter.CurrentPerson,StoryControl.SelectedStory, true);
                 StoryControl.BringToFront();
             }
         }

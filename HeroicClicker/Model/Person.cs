@@ -1,7 +1,9 @@
 ﻿using HeroicClicker.View.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,12 +16,24 @@ namespace HeroicClicker.Model
         public string Name { get; set; }
         public WorldView? WorldView { get; set; }
         public int Level { get; set; }
+
         public Class? Class { get; set; }
         public int Body { get; set; }
+
+
         public int Mind { get; set; }
+  
         public int Spirit { get; set; }
+
+        public BindingList<string> Achievements { get; set; }
+
+        int Experience { get; set; }
+
         public int Id { get; }
         #endregion
+
+
+
 
         public Person(string name, WorldView? worldView, int level, Class? @class, int body, int mind, int spirit)
         {
@@ -39,7 +53,7 @@ namespace HeroicClicker.Model
             {
                 throw new ArgumentNullException("class", "Класс персонажа не может быть пустым");
             }
-            if (body<=0)
+            if (body <= 0)
             {
                 throw new ArgumentNullException("body", "Тело персонажа не может быть равным нулю или меньше");
             }
@@ -59,17 +73,38 @@ namespace HeroicClicker.Model
             Body = body;
             Mind = mind;
             Spirit = spirit;
+            Experience = Level * 10 - 10;
+            LevelUp();
 
             Random random = new Random();
             Id = random.Next();
+
+            Achievements = new BindingList<string>();
         }
 
+        public void GiveExperience(int exp)
+        {
+
+            this.Experience += exp;
+            LevelUp();
+        }
+        private void LevelUp()
+        {
+            Level = Experience / 10 + 1;
+            if (Level > 1)
+            {
+                UpdateCharacteristics();
+            }
+        }
+        private void UpdateCharacteristics()
+        {
+            this.Body = (int)(Body + Body  * 0.2);
+            this.Mind = (int)(Mind + Mind  * 0.2);
+            this.Spirit = (int)(Spirit + Spirit * 0.2);
+        }
         public override string ToString()
         {
             return $"{Name}, уровень: {Level}, класс: {Class}";
         }
-
-
-       
     }
 }

@@ -96,7 +96,7 @@ namespace HeroicClicker.View.Controls
             // 
             this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameBox.Location = new System.Drawing.Point(430, 78);
-            this.NameBox.MaxLength = 15;
+            this.NameBox.MaxLength = 9;
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(287, 34);
             this.NameBox.TabIndex = 4;
@@ -199,6 +199,7 @@ namespace HeroicClicker.View.Controls
             // 
             // ClassBox
             // 
+            this.ClassBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClassBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClassBox.FormattingEnabled = true;
             this.ClassBox.Location = new System.Drawing.Point(430, 183);
@@ -218,6 +219,7 @@ namespace HeroicClicker.View.Controls
             // 
             // WorldviewBox
             // 
+            this.WorldviewBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WorldviewBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorldviewBox.FormattingEnabled = true;
             this.WorldviewBox.Location = new System.Drawing.Point(430, 112);
@@ -229,6 +231,7 @@ namespace HeroicClicker.View.Controls
             // 
             this.SpiritBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SpiritBox.Location = new System.Drawing.Point(430, 288);
+            this.SpiritBox.MaxLength = 2;
             this.SpiritBox.Name = "SpiritBox";
             this.SpiritBox.Size = new System.Drawing.Size(287, 34);
             this.SpiritBox.TabIndex = 19;
@@ -247,6 +250,7 @@ namespace HeroicClicker.View.Controls
             // 
             this.MindBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MindBox.Location = new System.Drawing.Point(430, 254);
+            this.MindBox.MaxLength = 2;
             this.MindBox.Name = "MindBox";
             this.MindBox.Size = new System.Drawing.Size(287, 34);
             this.MindBox.TabIndex = 17;

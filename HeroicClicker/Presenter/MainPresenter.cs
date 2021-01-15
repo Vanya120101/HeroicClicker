@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace HeroicClicker.Presenter
 {
     public delegate void ButtonEvent(object sender, EventArgs e);
+    public delegate void AddAchievement(Person person, string namePerson, bool isStory = false);
+
     class MainPresenter
     {
         IMainForm MainForm;
@@ -25,6 +27,7 @@ namespace HeroicClicker.Presenter
         FightPresenter FightPresenter;
         StoryPresenter StoryPresenter;
         BattlePresenter BattlePresenter;
+        AchievementPresenter AchievementPresenter;
         public Person CurrentPerson
         {
             get { return PersonPresenter.CurrentPerson; }
@@ -44,13 +47,16 @@ namespace HeroicClicker.Presenter
             PersonButtonClick(this, null);
 
             BattlePresenter = new BattlePresenter(FightControl);
+            BattlePresenter.Save += PersonPresenter.Save;
+            BattlePresenter.AddAchievement += PersonPresenter.AddAchievement;
 
 
             FightPresenter = new FightPresenter(this, FightChoiceControl, FightControl, BattlePresenter);
 
             StoryPresenter = new StoryPresenter(this, StoryControl, FightControl, BattlePresenter);
+            StoryPresenter.AddAchievement += PersonPresenter.AddAchievement;
 
-            
+            AchievementPresenter = new AchievementPresenter(this, AchievementControl);
         }
 
         private void AchievementButtonClick(object sender, EventArgs e)
@@ -60,6 +66,7 @@ namespace HeroicClicker.Presenter
                 MainForm.ShowError("Персонаж не выбран");
                 return;
             }
+            AchievementPresenter.Update();
             AchievementControl.BringToFront();
         }
 
