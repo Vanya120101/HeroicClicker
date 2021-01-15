@@ -46,12 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Fight.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
+    <Compile Include="Presenter\BattlePresenter.cs" />
     <Compile Include="Presenter\FightPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\PersonPresenter.cs" />
+    <Compile Include="Presenter\StoryPresenter.cs" />
     <Compile Include="View\Controls\AchievementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,8 +158,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

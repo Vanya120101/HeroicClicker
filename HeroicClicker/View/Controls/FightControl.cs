@@ -127,7 +127,7 @@ namespace HeroicClicker.View.Controls
 
         public void ShowError(string errorMessage)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(errorMessage);
         }
 
         private void FightButton_Click(object sender, EventArgs e)

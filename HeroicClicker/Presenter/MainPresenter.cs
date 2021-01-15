@@ -23,7 +23,8 @@ namespace HeroicClicker.Presenter
 
         PersonPresenter PersonPresenter;
         FightPresenter FightPresenter;
-
+        StoryPresenter StoryPresenter;
+        BattlePresenter BattlePresenter;
         public Person CurrentPerson
         {
             get { return PersonPresenter.CurrentPerson; }
@@ -42,7 +43,13 @@ namespace HeroicClicker.Presenter
 
             PersonButtonClick(this, null);
 
-            FightPresenter = new FightPresenter(this, FightChoiceControl, FightControl);
+            BattlePresenter = new BattlePresenter(FightControl);
+
+
+            FightPresenter = new FightPresenter(this, FightChoiceControl, FightControl, BattlePresenter);
+
+            StoryPresenter = new StoryPresenter(this, StoryControl, FightControl, BattlePresenter);
+
             
         }
 
