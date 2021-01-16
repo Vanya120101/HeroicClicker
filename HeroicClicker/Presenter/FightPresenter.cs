@@ -33,7 +33,7 @@ namespace HeroicClicker.Presenter
             FightChoiceControl.Enemies = Enemies;
             FightChoiceControl.FightButtonClick += FightButtonClick;
             FightChoiceControl.InformationButtonClick += InformationButtonClick;
-            FightChoiceControl.ChangeButtonClick += ChangeButtonClick;
+            fightChoiceControl.ChangeButtonClick += ChangeButtonClick;
 
             FightControl = fightControl;
 
@@ -68,11 +68,76 @@ namespace HeroicClicker.Presenter
 
             PersonInformationForm personInformationForm = new PersonInformationForm(FightChoiceControl.SelectedEnemy);
             personInformationForm.Show();
-            //Вывести информацию о противнике
         }
         private void ChangeButtonClick()
         {
-            //Поменять список противников
+            BindingList<Person> newEnemies = new BindingList<Person>();
+            Random random = new Random();
+            for (int i = 0; i < 15; i++)
+            {
+                string name;
+                switch (random.Next(1, 11))
+                {
+                    case 1:
+                        name = "Финр";
+                        break;
+                    case 2:
+                        name = "Хакон";
+                        break;
+                    case 3:
+                        name = "Эгиль";
+                        break;
+                    case 4:
+                        name = "Асне";
+                        break;
+                    case 5:
+                        name = "Адела";
+                        break;
+                    case 6:
+                        name = "Алва";
+                        break;
+                    case 7:
+                        name = "Брунхильда";
+                        break;
+                    case 8:
+                        name = "Герда";
+                        break;
+                    case 9:
+                        name = "Гурда";
+                        break;
+                    case 10:
+                        name = "Кэри";
+                        break;
+                    default:
+                        name = "Неизвестный";
+                        break;
+                }
+
+                WorldView worldView = (WorldView)random.Next(1, 4);
+                Class @class = (Class)random.Next(1, 4);
+
+                int result = 0;
+                int body = 0;
+                int mind = 0;
+                int spirit = 0;
+                while (result != 20)
+                {
+                    body = random.Next(5, 11);
+                    mind = random.Next(5, 11);
+                    spirit = random.Next(5, 11);
+                    result = body + mind + spirit;
+                }
+
+                int level = random.Next(1, MainPresenter.CurrentPerson.Level + 5);
+
+                Person person = new Person(name, worldView, level, @class, body, mind, spirit);
+                newEnemies.Add(person);
+            }
+            Enemies = newEnemies;
+            FightChoiceControl.Enemies = Enemies;
+
+
+
         }
 
 

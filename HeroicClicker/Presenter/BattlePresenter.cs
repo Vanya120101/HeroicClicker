@@ -123,14 +123,14 @@ namespace HeroicClicker.Presenter
                 Log.Append("ВЫ ВЫИГРАЛИ");
                 isVictory = true;
                 AddAchievement.Invoke(FirstFighter,SecondFighter.Name);
-                FirstFighter.GiveExperience(5);
+                FirstFighter.GiveExperience(5*(SecondFighter.Level / FirstFighter.Level));
             }
             else
             {
                 Log.Append("ВЫ ПРОИГРАЛИ");
                 isVictory = false;
                 AddAchievement.Invoke(SecondFighter,FirstFighter.Name);
-                SecondFighter.GiveExperience(5);
+                SecondFighter.GiveExperience(5 * (FirstFighter.Level / SecondFighter.Level));
             }
             Save.Invoke();
             FightControl.Log = Log.ToString();

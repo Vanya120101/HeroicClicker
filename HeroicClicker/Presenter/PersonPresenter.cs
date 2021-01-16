@@ -35,6 +35,7 @@ namespace HeroicClicker.Presenter
             ProfilPersonControl.ChoosePerson += ChoosePerson;
 
             Persons = BasePresenter.Load("Persons");
+    
             Persons.ListChanged += Persons_ListChanged;
             ProfilPersonControl.Persons = Persons;
 
@@ -108,7 +109,7 @@ namespace HeroicClicker.Presenter
             Persons.Add(CurrentPerson);
 
             ClearFilesCreatePersonControl();
-            SetCharacteristic();
+            Update();
 
             ProfilPersonControl.BringToFront();
 
@@ -171,7 +172,7 @@ namespace HeroicClicker.Presenter
         {
             CreatePersonControl.BringToFront();
         }
-        private void SetCharacteristic()
+        public void Update()
         {
             if (CurrentPerson == null)
             {
@@ -220,7 +221,7 @@ namespace HeroicClicker.Presenter
             }
 
             CurrentPerson = ProfilPersonControl.SelectedPerson;
-            SetCharacteristic();
+            Update();
         }
 
         private void ClearFilesCreatePersonControl()
@@ -246,52 +247,38 @@ namespace HeroicClicker.Presenter
 
         public void AddAchievement(Person person, string achievementPart, bool isStory = false)
         {
-            bool consist = false;
             string achievementString;
             if (isStory)
             {
                 achievementString = string.Format("{0} покорил {1} историю", person.Name, achievementPart);
-
-                foreach (string achievement in person.Achievements)
-                {
-                    if (achievement == achievementString)
-                    {
-                        consist = true;
-                    }
-                }
-
-                if (!consist)
-                {
-                    person.Achievements.Add(achievementString);
-                }
-
             }
             else
             {
                 achievementString = string.Format("Покоритель {0}", achievementPart);
-
-                foreach (string achievement in person.Achievements)
-                {
-                    if (achievement == achievementString)
-                    {
-                        consist = true;
-                    }
-                }
-
-
-                if (!consist)
-                {
-                    person.Achievements.Add(achievementString);
-                }
             }
+            AddAchievement(person, achievementString);
 
-            
             Save();
 
         }
 
-        private void FindAchievement()
+        private void AddAchievement(Person person, string achievementString)
         {
+            bool consist = false;
+
+            foreach (string achievement in person.Achievements)
+            {
+                if (achievement == achievementString)
+                {
+                    consist = true;
+                }
+            }
+
+
+            if (!consist)
+            {
+                person.Achievements.Add(achievementString);
+            }
 
         }
     }

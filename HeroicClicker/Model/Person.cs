@@ -13,6 +13,10 @@ namespace HeroicClicker.Model
     public class Person
     {
         #region Свойства
+
+        readonly int body;
+        readonly int mind;
+        readonly int spirit;
         public string Name { get; set; }
         public WorldView? WorldView { get; set; }
         public int Level { get; set; }
@@ -22,7 +26,7 @@ namespace HeroicClicker.Model
 
 
         public int Mind { get; set; }
-  
+
         public int Spirit { get; set; }
 
         public BindingList<string> Achievements { get; set; }
@@ -73,13 +77,18 @@ namespace HeroicClicker.Model
             Body = body;
             Mind = mind;
             Spirit = spirit;
-            Experience = Level * 10 - 10;
-            LevelUp();
+
+            this.body = body;
+            this.mind = mind;
+            this.spirit = spirit;
 
             Random random = new Random();
             Id = random.Next();
 
             Achievements = new BindingList<string>();
+
+            Experience = Level * 10 - 10;
+            LevelUp();
         }
 
         public void GiveExperience(int exp)
@@ -96,12 +105,14 @@ namespace HeroicClicker.Model
                 UpdateCharacteristics();
             }
         }
-        private void UpdateCharacteristics()
+        public void UpdateCharacteristics()
         {
-            this.Body = (int)(Body + Body  * 0.2);
-            this.Mind = (int)(Mind + Mind  * 0.2);
-            this.Spirit = (int)(Spirit + Spirit * 0.2);
+            this.Body = (int)(body + (body * 0.2) * Level);
+            this.Mind = (int)(mind + (mind * 0.2) * Level);
+            this.Spirit = (int)(spirit + (spirit * 0.2) * Level);
         }
+
+
         public override string ToString()
         {
             return $"{Name}, уровень: {Level}, класс: {Class}";

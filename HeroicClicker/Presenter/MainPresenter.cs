@@ -99,6 +99,7 @@ namespace HeroicClicker.Presenter
             else
             {
                 ProfilPersonControl.BringToFront();
+                PersonPresenter.Update();
             }
         }
 
