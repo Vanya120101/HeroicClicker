@@ -33,7 +33,6 @@ namespace HeroicClicker.View.Controls
             this.LayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.LayoutButton = new System.Windows.Forms.FlowLayoutPanel();
             this.StartStoryButton = new System.Windows.Forms.Button();
-            this.ContinueStoryButton = new System.Windows.Forms.Button();
             this.ListOfStory = new System.Windows.Forms.ListBox();
             this.LayoutPanel.SuspendLayout();
             this.LayoutButton.SuspendLayout();
@@ -69,7 +68,6 @@ namespace HeroicClicker.View.Controls
             this.LayoutButton.AutoSize = true;
             this.LayoutButton.BackColor = System.Drawing.Color.White;
             this.LayoutButton.Controls.Add(this.StartStoryButton);
-            this.LayoutButton.Controls.Add(this.ContinueStoryButton);
             this.LayoutButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.LayoutButton.Location = new System.Drawing.Point(100, 30);
             this.LayoutButton.Margin = new System.Windows.Forms.Padding(100, 30, 3, 100);
@@ -92,22 +90,6 @@ namespace HeroicClicker.View.Controls
             this.StartStoryButton.Text = "Начать";
             this.StartStoryButton.UseVisualStyleBackColor = true;
             this.StartStoryButton.Click += new System.EventHandler(this.StartStoryButton_Click);
-            // 
-            // ContinueStoryButton
-            // 
-            this.ContinueStoryButton.AutoSize = true;
-            this.ContinueStoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ContinueStoryButton.FlatAppearance.BorderSize = 0;
-            this.ContinueStoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ContinueStoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ContinueStoryButton.Location = new System.Drawing.Point(286, 3);
-            this.ContinueStoryButton.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.ContinueStoryButton.Name = "ContinueStoryButton";
-            this.ContinueStoryButton.Size = new System.Drawing.Size(225, 100);
-            this.ContinueStoryButton.TabIndex = 2;
-            this.ContinueStoryButton.Text = "Продолжить";
-            this.ContinueStoryButton.UseVisualStyleBackColor = true;
-            this.ContinueStoryButton.Click += new System.EventHandler(this.ContinueStoryButton_Click);
             // 
             // ListOfStory
             // 
@@ -146,7 +128,6 @@ namespace HeroicClicker.View.Controls
         private System.Windows.Forms.FlowLayoutPanel LayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel LayoutButton;
         private System.Windows.Forms.Button StartStoryButton;
-        private System.Windows.Forms.Button ContinueStoryButton;
         private System.Windows.Forms.ListBox ListOfStory;
     }
 }

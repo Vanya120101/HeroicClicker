@@ -42,7 +42,6 @@ namespace HeroicClicker
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.ResizeButton = new System.Windows.Forms.Button();
-            this.QuestionButton = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
             this.ContentPanel = new System.Windows.Forms.Panel();
             this.LeftMenu.SuspendLayout();
@@ -189,7 +188,6 @@ namespace HeroicClicker
             this.TopMenu.Controls.Add(this.MinimizeButton);
             this.TopMenu.Controls.Add(this.CancelButton);
             this.TopMenu.Controls.Add(this.ResizeButton);
-            this.TopMenu.Controls.Add(this.QuestionButton);
             this.TopMenu.Controls.Add(this.MenuButton);
             this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopMenu.Location = new System.Drawing.Point(0, 0);
@@ -254,23 +252,6 @@ namespace HeroicClicker
             this.ResizeButton.TabIndex = 2;
             this.ResizeButton.UseVisualStyleBackColor = true;
             this.ResizeButton.Click += new System.EventHandler(this.ResizeButton_Click);
-            // 
-            // QuestionButton
-            // 
-            this.QuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.QuestionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.QuestionButton.FlatAppearance.BorderSize = 0;
-            this.QuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
-            this.QuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(76)))), ((int)(((byte)(63)))));
-            this.QuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuestionButton.ImageKey = "Search.png";
-            this.QuestionButton.ImageList = this.MenuImages;
-            this.QuestionButton.Location = new System.Drawing.Point(671, 3);
-            this.QuestionButton.Name = "QuestionButton";
-            this.QuestionButton.Size = new System.Drawing.Size(100, 100);
-            this.QuestionButton.TabIndex = 3;
-            this.QuestionButton.UseVisualStyleBackColor = true;
             // 
             // MenuButton
             // 
@@ -338,7 +319,6 @@ namespace HeroicClicker
         private System.Windows.Forms.Button PersonButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button ResizeButton;
-        private System.Windows.Forms.Button QuestionButton;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button AchievementButton;
         private System.Windows.Forms.Button FightButton;
