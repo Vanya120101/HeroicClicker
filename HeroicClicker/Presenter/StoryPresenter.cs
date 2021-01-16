@@ -61,18 +61,18 @@ namespace HeroicClicker.Presenter
             if (StoryControl.SelectedStory == "Легкая")
             {
                 step = 5;
-                Enemies = BasePresenter.Load("EnemiesOfFirstStory");
+                Enemies = GenerateEnemies(5, 1);
             }
             if (StoryControl.SelectedStory == "Средняя")
             {
                 step = 10;
-                Enemies = BasePresenter.Load("EnemiesOfSecondStory");
+                Enemies = GenerateEnemies(10, 5);
 
             }
             if (StoryControl.SelectedStory == "Сложная")
             {
                 step = 15;
-                Enemies = BasePresenter.Load("EnemiesOfThirdStory");
+                Enemies = GenerateEnemies(15, 15);
 
             }
             count = 0;
@@ -92,6 +92,73 @@ namespace HeroicClicker.Presenter
                 AddAchievement(MainPresenter.CurrentPerson,StoryControl.SelectedStory, true);
                 StoryControl.BringToFront();
             }
+        }
+
+        private BindingList<Person> GenerateEnemies(int count, int level)
+        {
+            BindingList<Person> newEnemies = new BindingList<Person>();
+            Random random = new Random();
+            for (int i = 0; i < 15; i++)
+            {
+                string name;
+                switch (random.Next(1, 11))
+                {
+                    case 1:
+                        name = "Финр";
+                        break;
+                    case 2:
+                        name = "Хакон";
+                        break;
+                    case 3:
+                        name = "Эгиль";
+                        break;
+                    case 4:
+                        name = "Асне";
+                        break;
+                    case 5:
+                        name = "Адела";
+                        break;
+                    case 6:
+                        name = "Алва";
+                        break;
+                    case 7:
+                        name = "Брунхильда";
+                        break;
+                    case 8:
+                        name = "Герда";
+                        break;
+                    case 9:
+                        name = "Гурда";
+                        break;
+                    case 10:
+                        name = "Кэри";
+                        break;
+                    default:
+                        name = "Неизвестный";
+                        break;
+                }
+
+                WorldView worldView = (WorldView)random.Next(1, 4);
+                Class @class = (Class)random.Next(1, 4);
+
+                int result = 0;
+                int body = 0;
+                int mind = 0;
+                int spirit = 0;
+                while (result != 20)
+                {
+                    body = random.Next(5, 11);
+                    mind = random.Next(5, 11);
+                    spirit = random.Next(5, 11);
+                    result = body + mind + spirit;
+                }
+              
+                
+
+                Person person = new Person(name, worldView, level, @class, body, mind, spirit);
+                newEnemies.Add(person);
+            }
+            return newEnemies;
         }
     }
 }

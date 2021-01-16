@@ -28,14 +28,14 @@ namespace HeroicClicker.Presenter
             MainPresenter = mainPresenter;
 
             FightChoiceControl = fightChoiceControl;
-            Enemies = BasePresenter.Load("Enemies");
             BattlePresenter = battlePresenter;
-            FightChoiceControl.Enemies = Enemies;
             FightChoiceControl.FightButtonClick += FightButtonClick;
             FightChoiceControl.InformationButtonClick += InformationButtonClick;
             fightChoiceControl.ChangeButtonClick += ChangeButtonClick;
 
             FightControl = fightControl;
+
+            ChangeButtonClick();
 
 
 
@@ -127,17 +127,18 @@ namespace HeroicClicker.Presenter
                     spirit = random.Next(5, 11);
                     result = body + mind + spirit;
                 }
+                int level = random.Next(1, 10);
+                if (MainPresenter.CurrentPerson != null)
+                {
+                    level = random.Next(1, MainPresenter.CurrentPerson.Level + 5);
 
-                int level = random.Next(1, MainPresenter.CurrentPerson.Level + 5);
+                }
 
                 Person person = new Person(name, worldView, level, @class, body, mind, spirit);
                 newEnemies.Add(person);
             }
             Enemies = newEnemies;
             FightChoiceControl.Enemies = Enemies;
-
-
-
         }
 
 
